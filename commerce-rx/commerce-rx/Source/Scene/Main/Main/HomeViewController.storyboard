@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vt1-kH-OAi">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="CnM-04-mii">
+            <objects>
+                <viewController id="Vt1-kH-OAi" customClass="HomeViewController" customModule="commerce_rx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CZJ-Vv-oN3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0U-rZ-OFa">
+                                <rect key="frame" x="0.0" y="159" width="393" height="659"/>
+                            </scrollView>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="f1q-Zz-A1a">
+                                <rect key="frame" x="0.0" y="59" width="393" height="100"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="0bn-4D-d5v" customClass="HomeSearchView" customModule="commerce_rx" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="40" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zhc-cU-tao" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                        <rect key="frame" x="0.0" y="60" width="393" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gX5-8j-tf8">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yEv-FV-Cyu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="f1q-Zz-A1a" firstAttribute="leading" secondItem="yEv-FV-Cyu" secondAttribute="leading" id="D2P-0i-ktU"/>
+                            <constraint firstItem="yEv-FV-Cyu" firstAttribute="trailing" secondItem="b0U-rZ-OFa" secondAttribute="trailing" id="G7H-Mo-Mu0"/>
+                            <constraint firstItem="b0U-rZ-OFa" firstAttribute="top" secondItem="yEv-FV-Cyu" secondAttribute="top" constant="100" id="OgQ-kK-0PE"/>
+                            <constraint firstItem="b0U-rZ-OFa" firstAttribute="leading" secondItem="yEv-FV-Cyu" secondAttribute="leading" id="ZMa-eo-99O"/>
+                            <constraint firstItem="yEv-FV-Cyu" firstAttribute="trailing" secondItem="f1q-Zz-A1a" secondAttribute="trailing" id="bya-IA-EbW"/>
+                            <constraint firstItem="yEv-FV-Cyu" firstAttribute="bottom" secondItem="b0U-rZ-OFa" secondAttribute="bottom" id="h0n-hw-IuK"/>
+                            <constraint firstItem="f1q-Zz-A1a" firstAttribute="top" secondItem="yEv-FV-Cyu" secondAttribute="top" id="kev-7a-7PE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonBarView" destination="Zhc-cU-tao" id="a74-d3-NHb"/>
+                        <outlet property="containerTopConst" destination="OgQ-kK-0PE" id="1QR-0z-jKV"/>
+                        <outlet property="containerView" destination="b0U-rZ-OFa" id="bPJ-0M-azM"/>
+                        <outlet property="navView" destination="f1q-Zz-A1a" id="7vU-2D-Mfz"/>
+                        <outlet property="searchView" destination="0bn-4D-d5v" id="gOs-ic-07W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ue2-tp-Zb3" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

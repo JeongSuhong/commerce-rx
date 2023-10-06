@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ParallaxView" customModule="commerce_rx" customModuleProvider="target">
+            <connections>
+                <outlet property="mainView" destination="agQ-RE-9Ki" id="RMJ-5g-62t"/>
+                <outlet property="titleLabel" destination="DKl-pT-HyP" id="v4Y-by-ivV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="pTH-q9-P6S">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="131"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="agQ-RE-9Ki">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="131"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKl-pT-HyP">
+                    <rect key="frame" x="175.66666666666666" y="86" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="bonMotStyleName" value="nanumB_20"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="agQ-RE-9Ki" firstAttribute="top" secondItem="pTH-q9-P6S" secondAttribute="top" id="BDV-ti-L03"/>
+                <constraint firstAttribute="bottom" secondItem="agQ-RE-9Ki" secondAttribute="bottom" id="Cf5-iW-Jo4"/>
+                <constraint firstAttribute="bottom" secondItem="DKl-pT-HyP" secondAttribute="bottom" constant="24" id="GY4-xe-oU9"/>
+                <constraint firstAttribute="trailing" secondItem="agQ-RE-9Ki" secondAttribute="trailing" id="e9j-Eu-Qc1"/>
+                <constraint firstItem="agQ-RE-9Ki" firstAttribute="leading" secondItem="pTH-q9-P6S" secondAttribute="leading" id="l8y-MH-tb4"/>
+                <constraint firstItem="DKl-pT-HyP" firstAttribute="centerX" secondItem="pTH-q9-P6S" secondAttribute="centerX" id="sAk-GX-Y6V"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="57" y="-227"/>
+        </view>
+    </objects>
+</document>

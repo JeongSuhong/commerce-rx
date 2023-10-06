@@ -15,7 +15,7 @@ class MainStyleViewController: UIViewController, StoryboardBased, StoryboardView
   
   typealias Reactor = MainStyleReactor
   
-  @IBOutlet weak var mainView: BaseTableView!
+  @IBOutlet weak var bannerView: ParallaxPagerView!
   
   var disposeBag = DisposeBag()
   private let itemInfo = IndicatorInfo(title: "스타일")
@@ -28,9 +28,14 @@ class MainStyleViewController: UIViewController, StoryboardBased, StoryboardView
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    mainView.register(Reusable.cell)
-    mainView.delegate = self
-    mainView.dataSource = self
+//    mainView.register(Reusable.cell)
+  }
+  
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    bannerView.bind([.init(imageUrl: "https://picsum.photos/1200", title: "2023 베스트 패션"),
+                     .init(imageUrl: "https://picsum.photos/1300"),
+                     .init(imageUrl: "https://picsum.photos/1400", title: "이번달 추천 아이템")])
   }
   
   
@@ -52,5 +57,7 @@ class MainStyleViewController: UIViewController, StoryboardBased, StoryboardView
 //    return cell
 //  }
 }
+
+
 
 

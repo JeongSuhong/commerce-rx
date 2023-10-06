@@ -3,15 +3,16 @@ import UIKit
 import ReactorKit
 import XLPagerTabStrip
 import SnapKit
+import Reusable
 
-
-class HomeViewController: ButtonBarPagerTabStripViewController, StoryboardView {
+class HomeViewController: ButtonBarPagerTabStripViewController, StoryboardView, StoryboardBased {
   
   typealias Reactor = HomeReactor
   
   @IBOutlet weak var containerTopConst: NSLayoutConstraint!
   @IBOutlet weak var navView: UIStackView!
   @IBOutlet weak var searchView: HomeSearchView!
+  
   
   var disposeBag = DisposeBag()
   private var fullNavHeight: CGFloat = 0
@@ -28,7 +29,7 @@ setupPagerBar()
   }
   
   func bind(reactor: Reactor) {
-    
+
   }
   
   // MARK: PagerVC
@@ -42,7 +43,7 @@ setupPagerBar()
     settings.style.buttonBarItemsShouldFillAvailableWidth = false
     settings.style.buttonBarLeftContentInset = 0
     settings.style.buttonBarRightContentInset = 0
-    settings.style.buttonBarHeight = 40
+    settings.style.buttonBarHeight = 30
     
     let flowLayout = UICollectionViewFlowLayout()
     let buttonBarHeight = settings.style.buttonBarHeight!
@@ -60,9 +61,9 @@ setupPagerBar()
 
     changeCurrentIndexProgressive = { [weak self] (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
         guard changeCurrentIndex == true else { return }
-      oldCell?.label.bonMotStyleName = "tab"
+      oldCell?.label.bonMotStyleName = "nanum_10"
       oldCell?.label.textColor = .textDisable
-      newCell?.label.bonMotStyleName = "tabSelect"
+      newCell?.label.bonMotStyleName = "nanumB_10"
       newCell?.label.textColor = .black
     }
 

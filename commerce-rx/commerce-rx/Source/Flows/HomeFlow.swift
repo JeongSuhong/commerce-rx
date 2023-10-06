@@ -2,6 +2,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxFlow
+import Reusable
 
 // MARK: - Step
 
@@ -38,7 +39,7 @@ final class HomeFlow: Flow {
     guard let step = step as? HomeStep else { return .none }
     switch step {
     case .main:
-      let vc = UIStoryboard(name: HomeViewController.className, bundle: nil).instantiateInitialViewController() as! HomeViewController
+      let vc = HomeViewController.instantiate()
       let reactor = HomeReactor()
       vc.reactor = reactor
       self.navigationController.setViewControllers([vc], animated: false)

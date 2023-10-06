@@ -13,6 +13,19 @@
 		C42143EB2AA9D7DD0094230D /* BaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42143EA2AA9D7DD0094230D /* BaseTableCell.swift */; };
 		C42143EE2AA9D8D80094230D /* CommonProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42143ED2AA9D8D80094230D /* CommonProductView.xib */; };
 		C42143F02AA9D8DF0094230D /* CommonProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42143EF2AA9D8DF0094230D /* CommonProductView.swift */; };
+		C49927D52ABA8A350007C299 /* MainStyleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C49927D42ABA8A350007C299 /* MainStyleHeaderView.xib */; };
+		C49927D72ABA8A3C0007C299 /* MainStyleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49927D62ABA8A3C0007C299 /* MainStyleHeaderView.swift */; };
+		C49927DB2ABA8B690007C299 /* CommonBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C49927DA2ABA8B690007C299 /* CommonBannerView.xib */; };
+		C49927DD2ABA8B700007C299 /* CommonBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49927DC2ABA8B700007C299 /* CommonBannerView.swift */; };
+		C49927DF2ABAA2D90007C299 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49927DE2ABAA2D90007C299 /* UIImageView+Extensions.swift */; };
+		C49927E12ABAA42A0007C299 /* Collection+Exnteions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49927E02ABAA42A0007C299 /* Collection+Exnteions.swift */; };
+		C49D7A472ABAD2F2000F4CB8 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49D7A462ABAD2F2000F4CB8 /* UIStackView+Extensions.swift */; };
+		C49D7A4A2ABADAAD000F4CB8 /* ParallaxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C49D7A492ABADAAD000F4CB8 /* ParallaxView.xib */; };
+		C49D7A4C2ABADAB5000F4CB8 /* ParallaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49D7A4B2ABADAB5000F4CB8 /* ParallaxView.swift */; };
+		C49D7A4E2ABADD8B000F4CB8 /* ParallaxPagerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C49D7A4D2ABADD8B000F4CB8 /* ParallaxPagerView.xib */; };
+		C49D7A502ABADD95000F4CB8 /* ParallaxPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49D7A4F2ABADD95000F4CB8 /* ParallaxPagerView.swift */; };
+		C49D7A532ABAF051000F4CB8 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49D7A522ABAF051000F4CB8 /* ApiProvider.swift */; };
+		C49D7A552ABAF4E7000F4CB8 /* HomeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49D7A542ABAF4E7000F4CB8 /* HomeApi.swift */; };
 		C4A0C9582AB1AD4000F46AD1 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0C9572AB1AD4000F46AD1 /* UIColor+Extensions.swift */; };
 		C4A0C95B2AB1B36100F46AD1 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0C95A2AB1B36100F46AD1 /* AppFlow.swift */; };
 		C4A0C95D2AB1B63900F46AD1 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0C95C2AB1B63900F46AD1 /* MainFlow.swift */; };
@@ -23,7 +36,6 @@
 		C4A0C9642AB1BA5D00F46AD1 /* NanumBarunGothicUltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C45E864B2AAF16A100C44B50 /* NanumBarunGothicUltraLight.ttf */; };
 		C4A0C9652AB1BA5D00F46AD1 /* NanumBarunGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C45E864C2AAF16A100C44B50 /* NanumBarunGothicBold.ttf */; };
 		C4A0C9672AB1BB2E00F46AD1 /* HomeReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0C9662AB1BB2E00F46AD1 /* HomeReactor.swift */; };
-		C4A0C9702AB43AB700F46AD1 /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0C96F2AB43AB700F46AD1 /* BaseTableView.swift */; };
 		C4A4E0372AA996420046F60C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4E0362AA996420046F60C /* AppDelegate.swift */; };
 		C4A4E03B2AA996420046F60C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4E03A2AA996420046F60C /* HomeViewController.swift */; };
 		C4A4E0402AA996430046F60C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A4E03F2AA996430046F60C /* Assets.xcassets */; };
@@ -75,13 +87,25 @@
 		C45E864A2AAF16A100C44B50 /* NanumBarunGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.ttf; sourceTree = "<group>"; };
 		C45E864B2AAF16A100C44B50 /* NanumBarunGothicUltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicUltraLight.ttf; sourceTree = "<group>"; };
 		C45E864C2AAF16A100C44B50 /* NanumBarunGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.ttf; sourceTree = "<group>"; };
+		C49927D42ABA8A350007C299 /* MainStyleHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainStyleHeaderView.xib; sourceTree = "<group>"; };
+		C49927D62ABA8A3C0007C299 /* MainStyleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStyleHeaderView.swift; sourceTree = "<group>"; };
+		C49927DA2ABA8B690007C299 /* CommonBannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonBannerView.xib; sourceTree = "<group>"; };
+		C49927DC2ABA8B700007C299 /* CommonBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonBannerView.swift; sourceTree = "<group>"; };
+		C49927DE2ABAA2D90007C299 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		C49927E02ABAA42A0007C299 /* Collection+Exnteions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Exnteions.swift"; sourceTree = "<group>"; };
+		C49D7A462ABAD2F2000F4CB8 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		C49D7A492ABADAAD000F4CB8 /* ParallaxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParallaxView.xib; sourceTree = "<group>"; };
+		C49D7A4B2ABADAB5000F4CB8 /* ParallaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxView.swift; sourceTree = "<group>"; };
+		C49D7A4D2ABADD8B000F4CB8 /* ParallaxPagerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParallaxPagerView.xib; sourceTree = "<group>"; };
+		C49D7A4F2ABADD95000F4CB8 /* ParallaxPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxPagerView.swift; sourceTree = "<group>"; };
+		C49D7A522ABAF051000F4CB8 /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
+		C49D7A542ABAF4E7000F4CB8 /* HomeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeApi.swift; sourceTree = "<group>"; };
 		C4A0C9572AB1AD4000F46AD1 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		C4A0C95A2AB1B36100F46AD1 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		C4A0C95C2AB1B63900F46AD1 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
 		C4A0C95E2AB1B67700F46AD1 /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
 		C4A0C9602AB1B89800F46AD1 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		C4A0C9662AB1BB2E00F46AD1 /* HomeReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReactor.swift; sourceTree = "<group>"; };
-		C4A0C96F2AB43AB700F46AD1 /* BaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
 		C4A4E0332AA996420046F60C /* commerce-rx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "commerce-rx.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A4E0362AA996420046F60C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4A4E03A2AA996420046F60C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +165,9 @@
 				C42143E72AA9CE520094230D /* NSObject+Extensions.swift */,
 				C4A0C9572AB1AD4000F46AD1 /* UIColor+Extensions.swift */,
 				C4A6C65E2AB98A1100016AFB /* UIView+Extensions.swift */,
+				C49927DE2ABAA2D90007C299 /* UIImageView+Extensions.swift */,
+				C49927E02ABAA42A0007C299 /* Collection+Exnteions.swift */,
+				C49D7A462ABAD2F2000F4CB8 /* UIStackView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -149,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				C42143EA2AA9D7DD0094230D /* BaseTableCell.swift */,
-				C4A0C96F2AB43AB700F46AD1 /* BaseTableView.swift */,
 				C4A6C6672AB9A53F00016AFB /* BaseCollectionCell.swift */,
 			);
 			path = Base;
@@ -181,6 +207,53 @@
 				C45E864C2AAF16A100C44B50 /* NanumBarunGothicBold.ttf */,
 			);
 			path = NanumBarun;
+			sourceTree = "<group>";
+		};
+		C49927D32ABA8A270007C299 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C49927D42ABA8A350007C299 /* MainStyleHeaderView.xib */,
+				C49927D62ABA8A3C0007C299 /* MainStyleHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C49927D82ABA8B5A0007C299 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C49D7A482ABAD9F6000F4CB8 /* ParallaxView */,
+				C49927D92ABA8B600007C299 /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C49927D92ABA8B600007C299 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C49927DA2ABA8B690007C299 /* CommonBannerView.xib */,
+				C49927DC2ABA8B700007C299 /* CommonBannerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C49D7A482ABAD9F6000F4CB8 /* ParallaxView */ = {
+			isa = PBXGroup;
+			children = (
+				C49D7A492ABADAAD000F4CB8 /* ParallaxView.xib */,
+				C49D7A4B2ABADAB5000F4CB8 /* ParallaxView.swift */,
+				C49D7A4D2ABADD8B000F4CB8 /* ParallaxPagerView.xib */,
+				C49D7A4F2ABADD95000F4CB8 /* ParallaxPagerView.swift */,
+			);
+			path = ParallaxView;
+			sourceTree = "<group>";
+		};
+		C49D7A512ABAEADD000F4CB8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C49D7A522ABAF051000F4CB8 /* ApiProvider.swift */,
+				C49D7A542ABAF4E7000F4CB8 /* HomeApi.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		C4A0C9592AB1B35A00F46AD1 /* Flows */ = {
@@ -232,7 +305,7 @@
 		C4A4E04F2AA99C4E0046F60C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				C4A6C65B2AB9847700016AFB /* Utils */,
+				C49D7A512ABAEADD000F4CB8 /* Network */,
 				C4A0C9592AB1B35A00F46AD1 /* Flows */,
 				C4DA5B562AB043850000DCA5 /* Mangers */,
 				C42143EC2AA9D8C30094230D /* Views */,
@@ -263,6 +336,7 @@
 		C4A4E0522AA99C670046F60C /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				C49927D82ABA8B5A0007C299 /* Common */,
 				C4A4E0532AA99C700046F60C /* Main */,
 				C4A4E0412AA996430046F60C /* LaunchScreen.storyboard */,
 			);
@@ -293,6 +367,7 @@
 		C4A4E09A2AA9B6900046F60C /* Style */ = {
 			isa = PBXGroup;
 			children = (
+				C49927D32ABA8A270007C299 /* Views */,
 				C4A6C6602AB99CD100016AFB /* MainStyleViewController.storyboard */,
 				C42143E22AA9C97E0094230D /* MainStyleViewController.swift */,
 				C4A6C6652AB9A26800016AFB /* MainStyleReactor.swift */,
@@ -325,13 +400,6 @@
 				C4A6C6572AB980DB00016AFB /* bar-logo.gif */,
 			);
 			path = Gif;
-			sourceTree = "<group>";
-		};
-		C4A6C65B2AB9847700016AFB /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		C4DA5B562AB043850000DCA5 /* Mangers */ = {
@@ -448,6 +516,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4A4E09F2AA9B70B0046F60C /* MainNewViewController.storyboard in Resources */,
+				C49D7A4A2ABADAAD000F4CB8 /* ParallaxView.xib in Resources */,
+				C49927DB2ABA8B690007C299 /* CommonBannerView.xib in Resources */,
 				C4A0C9642AB1BA5D00F46AD1 /* NanumBarunGothicUltraLight.ttf in Resources */,
 				C4A6C6612AB99CD100016AFB /* MainStyleViewController.storyboard in Resources */,
 				C4A6C6582AB980DB00016AFB /* bar-logo.gif in Resources */,
@@ -458,7 +528,9 @@
 				C4A0C9632AB1BA5D00F46AD1 /* NanumBarunGothicLight.ttf in Resources */,
 				C4A4E0432AA996430046F60C /* LaunchScreen.storyboard in Resources */,
 				C4A0C9622AB1BA5D00F46AD1 /* NanumBarunGothic.ttf in Resources */,
+				C49927D52ABA8A350007C299 /* MainStyleHeaderView.xib in Resources */,
 				C4A4E0402AA996430046F60C /* Assets.xcassets in Resources */,
+				C49D7A4E2ABADD8B000F4CB8 /* ParallaxPagerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,21 +543,29 @@
 			files = (
 				C4A6C6502AB97C6300016AFB /* HomeSearchViewReactor.swift in Sources */,
 				C42143E52AA9C9E20094230D /* MainNewViewController.swift in Sources */,
+				C49927D72ABA8A3C0007C299 /* MainStyleHeaderView.swift in Sources */,
 				C42143EB2AA9D7DD0094230D /* BaseTableCell.swift in Sources */,
 				C4A0C95D2AB1B63900F46AD1 /* MainFlow.swift in Sources */,
 				C4A4E03B2AA996420046F60C /* HomeViewController.swift in Sources */,
 				C4A0C95B2AB1B36100F46AD1 /* AppFlow.swift in Sources */,
+				C49927DD2ABA8B700007C299 /* CommonBannerView.swift in Sources */,
+				C49D7A472ABAD2F2000F4CB8 /* UIStackView+Extensions.swift in Sources */,
 				C4A6C64E2AB97C5C00016AFB /* HomeSearchView.swift in Sources */,
 				C42143E82AA9CE520094230D /* NSObject+Extensions.swift in Sources */,
 				C4A6C6682AB9A53F00016AFB /* BaseCollectionCell.swift in Sources */,
+				C49927E12ABAA42A0007C299 /* Collection+Exnteions.swift in Sources */,
 				C4A4E0372AA996420046F60C /* AppDelegate.swift in Sources */,
 				C4DA5B582AB043920000DCA5 /* BonMotManager.swift in Sources */,
+				C49D7A532ABAF051000F4CB8 /* ApiProvider.swift in Sources */,
 				C42143F02AA9D8DF0094230D /* CommonProductView.swift in Sources */,
 				C4A6C65F2AB98A1100016AFB /* UIView+Extensions.swift in Sources */,
+				C49927DF2ABAA2D90007C299 /* UIImageView+Extensions.swift in Sources */,
 				C4A0C9672AB1BB2E00F46AD1 /* HomeReactor.swift in Sources */,
-				C4A0C9702AB43AB700F46AD1 /* BaseTableView.swift in Sources */,
+				C49D7A552ABAF4E7000F4CB8 /* HomeApi.swift in Sources */,
 				C4A0C9582AB1AD4000F46AD1 /* UIColor+Extensions.swift in Sources */,
+				C49D7A4C2ABADAB5000F4CB8 /* ParallaxView.swift in Sources */,
 				C4A6C6662AB9A26800016AFB /* MainStyleReactor.swift in Sources */,
+				C49D7A502ABADD95000F4CB8 /* ParallaxPagerView.swift in Sources */,
 				C4A0C95F2AB1B67700F46AD1 /* HomeFlow.swift in Sources */,
 				C42143E32AA9C97E0094230D /* MainStyleViewController.swift in Sources */,
 			);

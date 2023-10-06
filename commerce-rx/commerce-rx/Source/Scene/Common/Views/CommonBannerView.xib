@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommonBannerView" customModule="commerce_rx" customModuleProvider="target">
+            <connections>
+                <outlet property="countLabel" destination="XjV-7e-J4M" id="y2V-l9-rpY"/>
+                <outlet property="mainView" destination="tSc-Ho-ebI" id="jis-au-2XJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dZ-jN-Tvq">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="262"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSc-Ho-ebI" customClass="FSPagerView" customModule="FSPagerView">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="262"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pFN-DO-iwX">
+                    <rect key="frame" x="268.66666666666669" y="221.66666666666666" width="116.33333333333331" height="32.333333333333343"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cDb-gW-D9H">
+                            <rect key="frame" x="8" y="5.9999999999999982" width="100.33333333333333" height="20.333333333333329"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 | 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XjV-7e-J4M">
+                                    <rect key="frame" x="0.0" y="0.0" width="33.333333333333336" height="20.333333333333332"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="bonMotStyleName" value="nanum_10"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hje-8k-Ix1">
+                                    <rect key="frame" x="41.333333333333314" y="0.0" width="59" height="20.333333333333332"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="bonMotStyleName" value="nanum_12"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="cDb-gW-D9H" secondAttribute="trailing" constant="8" id="P0s-dy-yij"/>
+                        <constraint firstItem="cDb-gW-D9H" firstAttribute="top" secondItem="pFN-DO-iwX" secondAttribute="top" constant="6" id="cIW-Xb-SLY"/>
+                        <constraint firstItem="cDb-gW-D9H" firstAttribute="leading" secondItem="pFN-DO-iwX" secondAttribute="leading" constant="8" id="gAq-DR-UZ6"/>
+                        <constraint firstAttribute="bottom" secondItem="cDb-gW-D9H" secondAttribute="bottom" constant="6" id="vK9-fS-7Oz"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" name="co-bg"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="pFN-DO-iwX" secondAttribute="trailing" constant="8" id="Rg0-Cn-Wvs"/>
+                <constraint firstAttribute="width" secondItem="5dZ-jN-Tvq" secondAttribute="height" multiplier="3:2" id="Sii-6d-vOt"/>
+                <constraint firstAttribute="trailing" secondItem="tSc-Ho-ebI" secondAttribute="trailing" id="efE-Y4-uRH"/>
+                <constraint firstAttribute="bottom" secondItem="pFN-DO-iwX" secondAttribute="bottom" constant="8" id="h8Q-Kt-vDY"/>
+                <constraint firstAttribute="bottom" secondItem="tSc-Ho-ebI" secondAttribute="bottom" id="o6A-gX-q2m"/>
+                <constraint firstItem="tSc-Ho-ebI" firstAttribute="leading" secondItem="5dZ-jN-Tvq" secondAttribute="leading" id="rH0-CT-HsN"/>
+                <constraint firstItem="tSc-Ho-ebI" firstAttribute="top" secondItem="5dZ-jN-Tvq" secondAttribute="top" id="tzc-Gk-AOz"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="387" y="-241"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="co-bg">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

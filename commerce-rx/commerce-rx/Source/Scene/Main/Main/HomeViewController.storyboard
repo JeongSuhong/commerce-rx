@@ -21,14 +21,14 @@
                                 <rect key="frame" x="0.0" y="159" width="393" height="659"/>
                             </scrollView>
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="f1q-Zz-A1a">
-                                <rect key="frame" x="0.0" y="59" width="393" height="100"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="90"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="0bn-4D-d5v" customClass="HomeSearchView" customModule="commerce_rx" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="40" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zhc-cU-tao" customClass="ButtonBarView" customModule="XLPagerTabStrip">
-                                        <rect key="frame" x="0.0" y="60" width="393" height="40"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="30" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zhc-cU-tao" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                        <rect key="frame" x="0.0" y="60" width="393" height="30"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gX5-8j-tf8">
                                             <size key="itemSize" width="128" height="128"/>

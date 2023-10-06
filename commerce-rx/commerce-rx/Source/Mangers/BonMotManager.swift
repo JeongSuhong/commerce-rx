@@ -7,22 +7,16 @@ import SnapKit
 
 class BonMotManagr {
   static func setupStyles() {
-    NamedStyles.shared.registerStyle(forName: "tabSelect", style: tabSelect)
-    NamedStyles.shared.registerStyle(forName: "tab", style: tab)
-    NamedStyles.shared.registerStyle(forName: "content", style: contentStyle)
+    let fontSize: [CGFloat] = [10, 12, 16, 20, 24]
+    fontSize.forEach { size in
+      let boldStyle = StringStyle(.font(UIFont(name: "NanumBarunGothicBold", size: size)!))
+      NamedStyles.shared.registerStyle(forName: "nanumB_\(Int(size))", style: boldStyle)
+      
+      let style = StringStyle(.font(UIFont(name: "NanumBarunGothic", size: size)!))
+      NamedStyles.shared.registerStyle(forName: "nanum_\(Int(size))", style: style)
+      
+      let lightStyle = StringStyle(.font(UIFont(name: "NanumBarunGothic", size: size)!))
+      NamedStyles.shared.registerStyle(forName: "nanumL_\(Int(size))", style: lightStyle)
+    }
   }
-}
-
-extension BonMotManagr {
-  static let tabSelect = StringStyle(
-    .font(UIFont(name: "NanumBarunGothicBold", size: 12)!)
-  )
-  
-  static let tab = StringStyle(
-    .font(UIFont(name: "NanumBarunGothic", size: 12)!)
-  )
-
-  static let contentStyle = StringStyle(
-    .font(UIFont(name: "NanumBarunGothic", size: 14)!)
-  )
 }

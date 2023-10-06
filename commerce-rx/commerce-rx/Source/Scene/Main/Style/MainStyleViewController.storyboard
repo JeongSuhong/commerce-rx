@@ -17,20 +17,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Vao-uN-DX3" customClass="BaseTableView" customModule="commerce_rx" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="150" translatesAutoresizingMaskIntoConstraints="NO" id="e6E-rm-oPd" customClass="ParallaxPagerView" customModule="commerce_rx" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="59" width="393" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Vao-uN-DX3" secondAttribute="bottom" id="Lfw-eG-wlT"/>
-                            <constraint firstItem="Vao-uN-DX3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="bL3-EY-VmA"/>
-                            <constraint firstItem="Vao-uN-DX3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="txp-eD-Dn8"/>
-                            <constraint firstItem="Vao-uN-DX3" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="zV5-fo-agK"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="e6E-rm-oPd" secondAttribute="trailing" id="I6R-wS-s6q"/>
+                            <constraint firstItem="e6E-rm-oPd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="QwA-XJ-2yl"/>
+                            <constraint firstItem="e6E-rm-oPd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="TsX-ec-WMC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bannerView" destination="e6E-rm-oPd" id="kUc-Nx-1OP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

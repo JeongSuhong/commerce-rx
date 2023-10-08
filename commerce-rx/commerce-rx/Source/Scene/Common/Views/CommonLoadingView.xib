@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommonLoadingView" customModule="commerce_rx" customModuleProvider="target">
+            <connections>
+                <outlet property="mainView" destination="zYx-fL-1aP" id="0dy-Xd-aoP"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Iv8-AF-44b">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYx-fL-1aP" customClass="GIFImageView" customModule="Gifu">
+                    <rect key="frame" x="193.66666666666666" y="444.66666666666669" width="43" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="zYx-fL-1aP" secondAttribute="height" multiplier="1:1" id="jNC-q9-BpA"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loading"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="odm-W8-ACx"/>
+            <color key="backgroundColor" name="co-lodaing-bg"/>
+            <constraints>
+                <constraint firstItem="zYx-fL-1aP" firstAttribute="width" secondItem="Iv8-AF-44b" secondAttribute="width" multiplier="0.1" id="9Ya-AP-xRJ"/>
+                <constraint firstItem="zYx-fL-1aP" firstAttribute="centerY" secondItem="Iv8-AF-44b" secondAttribute="centerY" id="Sdg-C3-KLj"/>
+                <constraint firstItem="zYx-fL-1aP" firstAttribute="centerX" secondItem="Iv8-AF-44b" secondAttribute="centerX" id="bnr-OO-RLQ"/>
+            </constraints>
+            <point key="canvasLocation" x="244" y="35"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="co-lodaing-bg">
+            <color red="0.90196078431372551" green="0.90196078431372551" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

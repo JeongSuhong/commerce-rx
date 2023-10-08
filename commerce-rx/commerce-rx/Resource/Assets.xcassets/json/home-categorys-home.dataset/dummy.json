@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "name": "빠른배송",
+      "id": "0",
+      "type": "delivery",
+      "titleImage": "https://picsum.photos/200"
+    },
+    {
+      "name": "베스트",
+      "id": "1",
+      "type": "list",
+      "titleImage": "https://picsum.photos/200",
+      "value": "best"
+    },
+    {
+      "name": "신규",
+      "id": "2",
+      "type": "list",
+      "titleImage": "https://picsum.photos/200"
+    },
+    {
+      "name": "테스트는",
+      "id": "3",
+      "type": "list",
+      "titleImage": "https://picsum.photos/200"
+    },
+    {
+      "name": "첫번째랑",
+      "id": "4",
+      "type": "list",
+      "titleImage": "https://picsum.photos/200"
+    },
+    {
+      "name": "두번째만",
+      "id": "5",
+      "type": "list",
+      "titleImage": "https://picsum.photos/200"
+    },
+    {
+      "name": "가능",
+      "id": "6",
+      "type": "list",
+      "titleImage": "https://picsum.photos/200"
+    },
+    {
+      "name": "합니다",
+      "id": "7",
+      "type": "list",
+      "titleImage": "https://picsum.photos/200"
+    }
+  ]
+}

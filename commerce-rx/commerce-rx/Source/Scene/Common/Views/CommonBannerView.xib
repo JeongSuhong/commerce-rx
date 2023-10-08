@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="countLabel" destination="XjV-7e-J4M" id="y2V-l9-rpY"/>
                 <outlet property="mainView" destination="tSc-Ho-ebI" id="jis-au-2XJ"/>
+                <outlet property="moveListLabel" destination="Hje-8k-Ix1" id="0U1-3R-CHa"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -22,7 +23,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="262"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pFN-DO-iwX">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pFN-DO-iwX" customClass="BaseView" customModule="commerce_rx" customModuleProvider="target">
                     <rect key="frame" x="268.66666666666669" y="221.66666666666666" width="116.33333333333331" height="32.333333333333343"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cDb-gW-D9H">
@@ -57,9 +58,7 @@
                         <constraint firstAttribute="bottom" secondItem="cDb-gW-D9H" secondAttribute="bottom" constant="6" id="vK9-fS-7Oz"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="8"/>
-                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="autoCorner" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>

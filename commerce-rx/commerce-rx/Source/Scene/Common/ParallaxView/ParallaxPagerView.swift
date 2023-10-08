@@ -9,10 +9,24 @@ import Foundation
 import UIKit
 import FSPagerView
 import Reusable
+import RxSwift
+import RxCocoa
+
+extension Reactive where Base: ParallaxPagerView {
+  var didSelected: ControlEvent<Int> {
+    return ControlEvent(events: base.selectedAction)
+  }
+}
 
 class ParallaxPagerView: UIView, NibOwnerLoadable {
+  
   @IBOutlet weak var mainView: FSPagerView!
- 
+  @IBOutlet weak var countLabel: UILabel!
+  @IBOutlet weak var moveListLabel: UILabel!
+  
+  var selectedAction = PublishSubject<Int>()
+  
+  private var disposeBag = DisposeBag()
   private var infos: [ParallaxView.Model] = []
   
   required init?(coder aDecoder: NSCoder) {
@@ -28,6 +42,8 @@ class ParallaxPagerView: UIView, NibOwnerLoadable {
   
   func bind(_ infos: [ParallaxView.Model]) {
     // Bounds 값을 가져오기때문에 frame 계산이 끝난 후 호출할 것!
+    disposeBag = DisposeBag()
+    
     self.infos = infos
     mainView.reloadData()
   }
@@ -60,5 +76,13 @@ extension ParallaxPagerView: FSPagerViewDelegate , FSPagerViewDataSource {
       cell?.mainView.frame = CGRect(x: newX, y: 0,
                                    width: mainView.bounds.width, height: mainView.bounds.height)
     }
+  }
+  
+  func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+    self.selectedAction.onNext(index)
+  }
+
+  func pagerView(_ pagerView: FSPagerView, willDisplay cell: FSPagerViewCell, forItemAt index: Int) {
+    countLabel.text = "\(index + 1) | \(infos.count)"
   }
 }

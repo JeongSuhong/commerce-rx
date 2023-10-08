@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "name": "배너 url 타입",
+      "id": "0",
+      "type": "url",
+      "titleImage": "https://shop-phinf.pstatic.net/20230809_284/1691581528786OYY3C_PNG/Narrow2.png?type=a2304_jpg",
+      "value": "https://shopping.naver.com/festa/gift/64d37c8924f72e556b16da19?pcode=naver_shoppinghomegroup_general&campaign_id=2309-shopping-001"
+    },
+    {
+      "name": "배너 상품 타입",
+      "id": "1",
+      "type": "products",
+      "titleImage": "https://shop-phinf.pstatic.net/20230419_248/1681870420037kk341_PNG/EC9DB4EB8AA9EBA19C_2.png?type=a2304_jpg",
+      "value": "0"
+    },
+    {
+      "name": "배너 카테고리 타입",
+      "id": "2",
+      "type": "categories",
+      "titleImage": "https://blog.kakaocdn.net/dn/d5hJKT/btqC6POJwrQ/q1KCkaOUcMqNa9LZEambF0/img.jpg",
+      "value": "0"
+    },
+    {
+      "name": "배너 이벤트 타입",
+      "id": "3",
+      "type": "events",
+      "titleImage": "https://cdn.crowdpic.net/detail-thumb/thumb_d_55A8DF44F3AEF1A3C9DCDE698CC33270.jpg",
+      "value": "0"
+    }
+  ]
+}

@@ -7,7 +7,7 @@ import SnapKit
 
 class BonMotManagr {
   static func setupStyles() {
-    let fontSize: [CGFloat] = [10, 12, 16, 20, 24]
+    let fontSize: [CGFloat] = [8, 10, 12, 16, 20, 24]
     fontSize.forEach { size in
       let boldStyle = StringStyle(.font(UIFont(name: "NanumBarunGothicBold", size: size)!))
       NamedStyles.shared.registerStyle(forName: "nanumB_\(Int(size))", style: boldStyle)

@@ -29,7 +29,7 @@ class CommonErrorView: UIView, NibOwnerLoadable {
   
   private func getStyle() -> BonMot.StringStyle {
     let red = NamedStyles.shared.style(forName: "nanumB_16")!.byAdding(
-      .color(.error)
+      .color(.init(resource: .coError))
     )
     
     return NamedStyles.shared.style(forName: "nanum_16")!.byAdding(

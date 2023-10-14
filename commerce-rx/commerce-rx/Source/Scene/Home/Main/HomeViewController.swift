@@ -62,7 +62,7 @@ setupPagerBar()
 
     changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
       oldCell?.label.bonMotStyleName = "nanum_10"
-      oldCell?.label.textColor = .textDisable
+      oldCell?.label.textColor = .init(resource: .coTextDisable)
       newCell?.label.bonMotStyleName = "nanumB_10"
       newCell?.label.textColor = .black
     }

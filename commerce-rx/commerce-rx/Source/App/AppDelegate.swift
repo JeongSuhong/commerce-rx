@@ -1,6 +1,5 @@
 
 import UIKit
-import IQKeyboardManagerSwift
 import RxFlow
 import RxSwift
 import RealmSwift
@@ -22,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     self.window = window
     
     registerForRemoteNotifications()
-    setupKeyboardManager()
     BonMotManagr.setupStyles()
     setupFlow()
 
@@ -38,12 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 // MARK: - Managers
 extension AppDelegate {
-  private func setupKeyboardManager() {
-    IQKeyboardManager.shared.enable = true
-    IQKeyboardManager.shared.enableDebugging = false
-    IQKeyboardManager.shared.enableAutoToolbar = false
-  }
-  
   private func setupFlow() {
     guard let window = self.window else { return }
     

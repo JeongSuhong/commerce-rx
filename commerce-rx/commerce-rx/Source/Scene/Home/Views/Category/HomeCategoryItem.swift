@@ -5,7 +5,7 @@ import Foundation
 import ReactorKit
 import Reusable
 
-class HomeCategoryView: UIView, NibOwnerLoadable {
+class HomeCategoryItem: UIView, NibOwnerLoadable {
   
   @IBOutlet weak var mainImageView: BaseImageView!
   @IBOutlet weak var titleLabel: UILabel!

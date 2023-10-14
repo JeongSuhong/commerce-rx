@@ -1,0 +1,26 @@
+{
+  "data": [
+    {
+      "id": "100000",
+      "type": "myDelivery",
+      "name": "연관상품 테스트",
+      "price": 154000,
+      "originPrice": 63900,
+      "createdAt": "2023-07-13T05:24:39.276Z",
+      "brandName": "0번브랜드",
+      "brandId": "0",
+      "representativeImage": "https://picsum.photos/800",
+      "benefit": {
+        "type": "coupon",
+        "amount": 5
+      },
+      "category": [
+        {
+          "id": 0,
+          "name": "0번카테고리"
+        }
+      ]
+    }
+  ],
+  "total": 1
+}

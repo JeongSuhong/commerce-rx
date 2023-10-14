@@ -61,8 +61,29 @@ class HomeStyleViewController: BaseViewController, StoryboardBased, StoryboardVi
       .compactMap { $0?.data }
       .observe(on: MainScheduler.asyncInstance)
       .bind(with: self) { vc, info in
-        vc.headerView.bind(categorys: info)
+        vc.headerView.categoryView.bind(categorys: info)
       }.disposed(by: disposeBag)
+    
+    // Swipe로 VC가 변경되고 다시 돌아오면 pageView Offset이 Reset 됨!! 깃헙 해결책이 Appear 에서 재호출이라 VC에서 작업.
+    Observable.combineLatest(headerView.categoryView.mainView.rx.contentOffset.distinctUntilChanged().throttle(.milliseconds(50), scheduler: MainScheduler.asyncInstance),
+                             self.rx.viewWillAppear)
+    .map { $0.0 }
+    .observe(on: MainScheduler.asyncInstance)
+    .bind(with: self) { vc, offset in
+      guard let mainView = vc.headerView.categoryView.mainView,
+            let pageView = vc.headerView.categoryView.pageView,
+            let tintView = vc.headerView.categoryView.pageTintView else { return }
+      
+      var ratio = mainView.visibleSize.width / mainView.contentSize.width
+      ratio = ratio > 0.8 ? 0.8 : (ratio < 0.3 ? 0.3 : ratio)
+      
+      tintView.snp.remakeConstraints { $0.width.equalTo(pageView.bounds.width * ratio) }
+      
+      let offsetRatio = offset.x / (mainView.contentSize.width - mainView.visibleSize.width)
+      let pageOffset = (pageView.contentSize.width - pageView.visibleSize.width) * offsetRatio
+      
+      pageView.setContentOffset(.init(x: pageOffset, y: pageView.contentOffset.y), animated: false)
+    }.disposed(by: disposeBag)
   }
   
   //  override func numberOfSections(in tableView: UITableView) -> Int {
@@ -79,6 +100,7 @@ class HomeStyleViewController: BaseViewController, StoryboardBased, StoryboardVi
   //    return cell
   //  }
 }
+
 
 
 

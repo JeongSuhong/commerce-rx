@@ -27,7 +27,7 @@ final class HomeFlow: Flow {
       let nvc = UINavigationController()
       nvc.setNavigationBarHidden(true, animated: false)
       
-      let tabbarImage = UIImage(named: "icon-tab-home")
+      let tabbarImage = UIImage(resource: .iconTabHome)
       let tabBarItem = UITabBarItem(title: "메인", image: tabbarImage, selectedImage: nil)
       
       nvc.tabBarItem = tabBarItem

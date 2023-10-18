@@ -11,15 +11,16 @@
             <connections>
                 <outlet property="bannerView" destination="OGS-Tf-g9X" id="ujG-QB-om9"/>
                 <outlet property="categoryView" destination="nbB-Xj-hEb" id="Vbt-Wn-EpL"/>
+                <outlet property="relateView" destination="Air-X0-phM" id="QnC-Tg-rIm"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="7fy-Po-sLZ">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="exx-Mu-DSh">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
                     <subviews>
                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="OGS-Tf-g9X" customClass="ParallaxPagerView" customModule="commerce_rx" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
@@ -27,6 +28,10 @@
                         </view>
                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="nbB-Xj-hEb" customClass="HomeCategoryView" customModule="commerce_rx" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="50" width="393" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="Air-X0-phM" customClass="HomeMoreListView" customModule="commerce_rx" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="100" width="393" height="50"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                     </subviews>

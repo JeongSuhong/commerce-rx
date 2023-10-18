@@ -26,6 +26,7 @@ setupPagerBar()
     navView.layoutIfNeeded()
     fullNavHeight = navView.frame.height
     containerTopConst.constant = fullNavHeight
+    searchView.snp.makeConstraints { $0.height.equalTo(60) }
   }
   
   func bind(reactor: Reactor) {

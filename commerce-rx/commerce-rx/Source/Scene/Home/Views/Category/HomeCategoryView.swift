@@ -44,14 +44,5 @@ class HomeCategoryView: UIView, NibOwnerLoadable {
         index, item, cell in
         cell.cellView.bind(item)
       }.disposed(by: disposeBag)
-
-    
-//    Observable.combineLatest(mainView.visibleSize, mainView.rx.contentSize, mainView.rx.contentOffset)
-//      .distinctUntilChanged()
-//      .observe(on: MainScheduler.asyncInstance)
-//      .bind(with: self) { v, args in
-//    
-//        
-//      }.disposed(by: disposeBag)
   }
 }

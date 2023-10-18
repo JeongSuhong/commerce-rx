@@ -10,12 +10,13 @@ import ReactorKit
 class HomeStyleViewController: BaseViewController, StoryboardBased, StoryboardView, IndicatorInfoProvider {
   
   enum Reusable {
-    static let cell = ReusableCell<BaseTableCell<CommonProductView>>()
+    static let cell = ReusableCell<BaseTableCell<HomeProductView>>()
   }
   
   typealias Reactor = HomeStyleReactor
   
   @IBOutlet weak var headerView: HomeStyleHeaderView!
+  
   
   private let itemInfo = IndicatorInfo(title: "스타일")
   
@@ -25,11 +26,8 @@ class HomeStyleViewController: BaseViewController, StoryboardBased, StoryboardVi
   
   
   override func viewDidLoad() {
-    
-    
     super.viewDidLoad()
-    
-    //    mainView.register(Reusable.cell)
+
   }
   
   func bind(reactor: Reactor) {
@@ -84,21 +82,13 @@ class HomeStyleViewController: BaseViewController, StoryboardBased, StoryboardVi
       
       pageView.setContentOffset(.init(x: pageOffset, y: pageView.contentOffset.y), animated: false)
     }.disposed(by: disposeBag)
+    
+    reactor.pulse(\.$relateProducts)
+      .observe(on: MainScheduler.asyncInstance)
+      .bind(with: self) { vc, info in
+        vc.headerView.relateView.bind(info)
+      }.disposed(by: disposeBag)
   }
-  
-  //  override func numberOfSections(in tableView: UITableView) -> Int {
-  //    return 1
-  //  }
-  //
-  //  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-  //    return 50
-  //  }
-  //
-  //  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-  //    let cell = tableView.dequeue(Reusable.cell, for: indexPath)
-  //    cell.cellView.backgroundColor = .gray
-  //    return cell
-  //  }
 }
 
 

@@ -3,6 +3,7 @@ import UIKit
 import ReactorKit
 import RxFlow
 import RxRelay
+import RealmSwift
 
 class HomeStyleReactor: Reactor, Stepper {
   
@@ -13,13 +14,14 @@ class HomeStyleReactor: Reactor, Stepper {
   
   enum Mutation {
 case setStatus(ViewStatus)
-    case setRefresh(BannersRes, HomeCategorysRes)
+    case setRefresh((BannersRes, HomeCategorysRes, ProductListRes))
   }
   
   struct State {
     var status: ViewStatus = .loading
     @Pulse var banners: BannersRes?
     @Pulse var categorys: HomeCategorysRes?
+    @Pulse var relateProducts: [String] = []
   }
 
   
@@ -57,9 +59,10 @@ case setStatus(ViewStatus)
     switch mutation {
     case .setStatus(let value):
       newState.status = value
-    case .setRefresh(let banners, let categorys):
-      newState.banners = banners
-      newState.categorys = categorys
+    case .setRefresh(let args):
+      newState.banners = args.0
+      newState.categorys = args.1
+      newState.relateProducts = args.2.data.map { $0.id }
 
     }
     return newState
@@ -68,15 +71,21 @@ case setStatus(ViewStatus)
 
 extension HomeStyleReactor {
   private func refresh() -> Observable<Mutation> {
-    let observ: Observable<(BannersRes, HomeCategorysRes)> = .create { observer in
+    let observ: Observable<(BannersRes, HomeCategorysRes, ProductListRes)> = .create { observer in
       let task = Task { @MainActor in
         do {
           async let bannerAction: BannersRes = ApiProvider.requestJson(HomeApi.banners)
           async let categorysAction: HomeCategorysRes = ApiProvider.requestJson(HomeApi.categorys(HomeCategorysReq(type: .home)))
+          async let relateProductAction: ProductListRes = ApiProvider.requestJson(ProductApi.list(.init(start: 0, perPage: 20, type: .related)))
           
-          let (banners, categorys) = try await (bannerAction, categorysAction)
+          let (banners, categorys, relateProducts) = try await (bannerAction, categorysAction, relateProductAction)
           
-          observer.onNext((banners, categorys))
+          let realm = try! await Realm()
+          try! realm.write {
+            realm.add(relateProducts.data.map { ProductModel($0) }, update: .modified)
+          }
+          
+          observer.onNext((banners, categorys, relateProducts))
           observer.onCompleted()
         } catch {
           observer.onError(error)
@@ -88,11 +97,10 @@ extension HomeStyleReactor {
     
     return observ
       .errorHandling()
-      .flatMap { (banners, categorys) -> Observable<Mutation> in
-        return .concat(.just(.setRefresh(banners, categorys)),
+      .flatMap { args -> Observable<Mutation> in
+        return .concat(.just(.setRefresh(args)),
                        .just(.setStatus(.none)))
       }
-    
   }
 }
 

@@ -3,10 +3,13 @@ import UIKit
 
 extension UIView {
     @IBInspectable
-    var cornerRadius: CGFloat {
-        get { self.layer.cornerRadius }
-        set { self.layer.cornerRadius = newValue }
+  var cornerRadius: CGFloat {
+    get { self.layer.cornerRadius }
+    set {
+      self.layer.cornerRadius = newValue
+      self.clipsToBounds = newValue > 0
     }
+  }
   
     @IBInspectable
     var borderColor: UIColor? {

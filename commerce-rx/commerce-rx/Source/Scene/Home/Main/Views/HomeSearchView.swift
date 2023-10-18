@@ -21,14 +21,16 @@ class HomeSearchView: UIView, NibOwnerLoadable, StoryboardView {
   }
   
   func bind(reactor: Reactor) {
-  setInit()
-    
-    
-  }
-  
-  private func setInit() {
     logoView.animate(withGIFNamed: "bar-logo")
-    
   }
   
+//  func bind(categorys: [HomeCategorysRes.categoryRes]) {
+//    disposeBag = DisposeBag()
+//    
+//    Observable.just(categorys)
+//      .bind(to: mainView.rx.items(Reusable.cell)) {
+//        index, item, cell in
+//        cell.cellView.bind(item)
+//      }.disposed(by: disposeBag)
+//  }
 }

@@ -24,18 +24,17 @@ class CommonErrorView: UIView, NibOwnerLoadable {
   
   private func bind() {
     mainView.animate(withGIFNamed: "error")
-    mainLabel.attributedText = "<r>Network Error!!!</r>\n잠시 후 다시 이용해주시기 바랍니다.".styled(with: getStyle())
+    mainLabel.attributedText = "<e>Network Error!!!</e>\n잠시 후 다시 이용해주시기 바랍니다.".styled(with: getStyle())
   }
   
   private func getStyle() -> BonMot.StringStyle {
-    let red = NamedStyles.shared.style(forName: "nanumB_16")!.byAdding(
-      .color(.init(resource: .coError))
-    )
-    
-    return NamedStyles.shared.style(forName: "nanum_16")!.byAdding(
+    let error = StringStyle(.color(.init(resource: .coF64444)))
+
+    return StringStyle(
+      .font(.nanumGothic(size: 16)),
       .alignment(.center),
       .lineHeightMultiple(1.4),
-      .xmlRules([.style("r", red)])
+      .xmlRules([.style("e", error)])
     )
   }
 }

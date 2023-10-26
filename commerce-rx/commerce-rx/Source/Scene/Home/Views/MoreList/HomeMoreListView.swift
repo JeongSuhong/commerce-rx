@@ -29,13 +29,13 @@ class HomeMoreListView: UIView, NibOwnerLoadable {
     layout.sectionInset = .init(top: 0, left: 20, bottom: 0, right: 20)
     layout.minimumLineSpacing = 12
     layout.minimumInteritemSpacing = 0
-    layout.itemSize = .init(width: 130, height: 300)
+    layout.itemSize = .init(width: 130, height: 250)
     mainView.collectionViewLayout = layout
   }
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    mainView.snp.makeConstraints { $0.height.equalTo(300) }
+    mainView.snp.makeConstraints { $0.height.equalTo(250) }
   }
   
   func bind(_ ids: [String]) {

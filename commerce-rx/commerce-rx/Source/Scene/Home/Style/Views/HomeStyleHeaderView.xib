@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,16 +12,18 @@
             <connections>
                 <outlet property="bannerView" destination="OGS-Tf-g9X" id="ujG-QB-om9"/>
                 <outlet property="categoryView" destination="nbB-Xj-hEb" id="Vbt-Wn-EpL"/>
+                <outlet property="mainView" destination="exx-Mu-DSh" id="gqV-4z-mAV"/>
                 <outlet property="relateView" destination="Air-X0-phM" id="QnC-Tg-rIm"/>
+                <outlet property="titleLabel" destination="Mas-vB-CTs" id="PZY-51-lq2"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="7fy-Po-sLZ">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="exx-Mu-DSh">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
                     <subviews>
                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="OGS-Tf-g9X" customClass="ParallaxPagerView" customModule="commerce_rx" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
@@ -34,13 +37,34 @@
                             <rect key="frame" x="0.0" y="100" width="393" height="50"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FlC-XP-zg4">
+                            <rect key="frame" x="0.0" y="150" width="393" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mas-vB-CTs">
+                                    <rect key="frame" x="16.000000000000004" y="0.0" width="41.333333333333343" height="50"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="co-text"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="bonMotStyleName" value="nanumB_20"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Mas-vB-CTs" firstAttribute="leading" secondItem="FlC-XP-zg4" secondAttribute="leading" constant="16" id="Wjz-lP-wIf"/>
+                                <constraint firstAttribute="height" constant="50" id="eWH-Fq-3jE"/>
+                                <constraint firstItem="Mas-vB-CTs" firstAttribute="top" secondItem="FlC-XP-zg4" secondAttribute="top" id="izn-19-esb"/>
+                                <constraint firstAttribute="bottom" secondItem="Mas-vB-CTs" secondAttribute="bottom" id="yDe-Z8-QPF"/>
+                            </constraints>
+                        </view>
                     </subviews>
                 </stackView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="exx-Mu-DSh" secondAttribute="trailing" id="Bge-iH-Xa5"/>
-                <constraint firstAttribute="bottom" secondItem="exx-Mu-DSh" secondAttribute="bottom" id="TzI-Xc-JQs"/>
+                <constraint firstAttribute="bottom" secondItem="exx-Mu-DSh" secondAttribute="bottom" id="eIq-xj-Ubo"/>
                 <constraint firstItem="exx-Mu-DSh" firstAttribute="top" secondItem="7fy-Po-sLZ" secondAttribute="top" id="qj0-gn-Yk1"/>
                 <constraint firstItem="exx-Mu-DSh" firstAttribute="leading" secondItem="7fy-Po-sLZ" secondAttribute="leading" id="xux-rj-f53"/>
             </constraints>
@@ -48,4 +72,9 @@
             <point key="canvasLocation" x="19" y="-304"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="co-text">
+            <color red="0.13725490196078433" green="0.16470588235294117" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -2,6 +2,8 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 
 extension UIStackView {
   func reusableViews<T: UIView>(count: Int, targetView: T.Type) -> [T] {
@@ -31,5 +33,15 @@ extension UIStackView {
   
   func subViews<T: UIView>(_ targetView: T.Type) -> [T] {
     return self.arrangedSubviews.compactMap { $0 as? T }.filter { $0.isHidden == false }
+  }
+  
+}
+
+extension Reactive where Base: UIStackView {
+  var contentHeight: ControlEvent<CGFloat> {
+    let source = observe(CGRect.self, #keyPath(UIView.bounds))
+      .compactMap { $0?.size.height }
+      .distinctUntilChanged()
+    return ControlEvent(events: source)
   }
 }

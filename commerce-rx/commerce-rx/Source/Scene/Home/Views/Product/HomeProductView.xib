@@ -52,8 +52,8 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="150" translatesAutoresizingMaskIntoConstraints="NO" id="dfJ-bd-5ty">
-                    <rect key="frame" x="0.0" y="130" width="130" height="150"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dfJ-bd-5ty">
+                    <rect key="frame" x="0.0" y="130" width="130" height="129.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwK-Gd-Voc">
                             <rect key="frame" x="0.0" y="8" width="130" height="20.5"/>
@@ -82,7 +82,7 @@
                                 <userDefinedRuntimeAttribute type="string" keyPath="bonMotStyleName" value="nanum_18"/>
                             </userDefinedRuntimeAttributes>
                         </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="60" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hnz-gL-hJy">
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hnz-gL-hJy">
                             <rect key="frame" x="0.0" y="85.5" width="130" height="44"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Uf-xe-oJM">
@@ -212,6 +212,7 @@
                         <constraint firstItem="fwK-Gd-Voc" firstAttribute="leading" secondItem="dfJ-bd-5ty" secondAttribute="leading" id="c5x-bj-Bxk"/>
                         <constraint firstItem="hnz-gL-hJy" firstAttribute="leading" secondItem="dfJ-bd-5ty" secondAttribute="leading" id="cL3-Af-5ma"/>
                         <constraint firstItem="ruS-S2-0o2" firstAttribute="leading" secondItem="dfJ-bd-5ty" secondAttribute="leading" id="oIh-pr-Wmh"/>
+                        <constraint firstAttribute="bottom" secondItem="hnz-gL-hJy" secondAttribute="bottom" id="pLa-3N-azU"/>
                         <constraint firstAttribute="trailing" secondItem="hnz-gL-hJy" secondAttribute="trailing" id="tEA-i1-MrE"/>
                     </constraints>
                 </view>

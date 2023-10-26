@@ -40,10 +40,9 @@ return .get
     case .list(let req):
       switch req.type {
       case .related:
-        return NSDataAsset(name: "home-products-related")!.data
-        
+        return NSDataAsset(name: "product-related")!.data
       default:
-        return Data()
+        return NSDataAsset(name: "product-list")!.data
       }
       
     default:

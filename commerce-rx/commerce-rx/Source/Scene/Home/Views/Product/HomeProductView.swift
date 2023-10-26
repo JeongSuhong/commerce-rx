@@ -46,6 +46,7 @@ class HomeProductView: UIView, NibOwnerLoadable, StoryboardView {
     let infoState = reactor.pulse(\.$info)
     infoState
       .compactMap { $0?.mainImage }
+      .distinctUntilChanged()
       .observe(on: MainScheduler.asyncInstance)
       .bind(with: self) { vc, img in
         vc.mainImageView.loadImage(img)

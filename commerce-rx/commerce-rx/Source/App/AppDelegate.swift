@@ -32,6 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
     return false
   }
+  
+  func applicationWillTerminate(_ application: UIApplication) {
+    let realm = try! Realm()
+    realm.delete(realm.objects(ProductModel.self))
+  }
 }
 
 // MARK: - Managers

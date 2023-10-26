@@ -1,0 +1,45 @@
+{
+    "id": "100000",
+    "name": "홈 상품 테스트",
+    "price": 3000,
+    "originPrice": 154000,
+    "createdAt": "2023-07-13T05:24:39.276Z",
+    "brandName": "0번브랜드",
+    "brandId": "0",
+    "images": [
+        {
+            "id": "10000",
+            "url": "https://picsum.photos/800"
+        },
+        {
+            "id": "10001",
+            "url": "https://picsum.photos/800"
+        },
+        {
+            "id": "10002",
+            "url": "https://picsum.photos/800"
+        },
+        {
+            "id": "10003",
+            "url": "https://picsum.photos/800"
+        },
+        {
+            "id": "10004",
+            "url": "https://picsum.photos/800"
+        }
+    ],
+    "benefit": {
+      "type": "coupon",
+      "amount": 5
+    },
+    "category": [
+      {
+        "id": 0,
+        "name": "0번카테고리"
+      }
+    ],
+    "isLike": true,
+    "detailContent": "나중에 더미 html 넣어두기",
+    "reviewRating": 4.5,
+    "reviewCount": 30
+}

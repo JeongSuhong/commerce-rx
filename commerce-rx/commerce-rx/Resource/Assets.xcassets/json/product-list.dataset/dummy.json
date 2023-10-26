@@ -1,0 +1,117 @@
+{
+  "data": [
+    {
+      "id": "100000",
+      "name": "홈 상품 테스트",
+      "price": 3000,
+      "originPrice": 154000,
+      "createdAt": "2023-07-13T05:24:39.276Z",
+      "brandName": "0번브랜드",
+      "brandId": "0",
+      "representativeImage": "https://picsum.photos/800",
+      "benefit": {
+        "type": "coupon",
+        "amount": 5
+      },
+      "category": [
+        {
+          "id": 0,
+          "name": "0번카테고리"
+        }
+      ],
+      "isLike": true
+    },
+    {
+      "id": "100001",
+      "name": "홈 상품 No옵션",
+      "price": 3000,
+      "originPrice": 3000,
+      "createdAt": "2023-07-13T05:24:39.276Z",
+      "brandName": "0번브랜드",
+      "brandId": "0",
+      "representativeImage": "https://picsum.photos/800",
+      "category": [
+        {
+          "id": 0,
+          "name": "0번카테고리"
+        }
+      ],
+      "isLike": false
+    },
+    {
+      "id": "100002",
+      "type": "todayDelivery",
+      "name": "홈 상품 테스트",
+      "price": 8000,
+      "originPrice": 100000,
+      "createdAt": "2023-07-13T05:24:39.276Z",
+      "brandName": "0번브랜드",
+      "brandId": "0",
+      "representativeImage": "https://picsum.photos/800",
+      "benefit": {
+        "type": "creditcard",
+        "amount": 12000
+      },
+      "category": [
+        {
+          "id": 0,
+          "name": "0번카테고리"
+        }
+      ],
+      "isLike": true
+    },
+    {
+      "id": "100003",
+      "type": "todayDelivery",
+      "name": "홈 상품 되게 긴긴긴 이름으로 테스트 상품 테스트",
+      "price": 4400,
+      "originPrice": 4400,
+      "createdAt": "2023-07-13T05:24:39.276Z",
+      "brandName": "0번브랜드",
+      "brandId": "0",
+      "representativeImage": "https://picsum.photos/800",
+      "category": [
+        {
+          "id": 0,
+          "name": "0번카테고리"
+        }
+      ],
+      "isLike": true
+    },
+    {
+      "id": "100004",
+      "name": "홈 상품 테스트",
+      "price": 2400,
+      "originPrice": 14400,
+      "createdAt": "2023-07-13T05:24:39.276Z",
+      "brandName": "0번브랜드",
+      "brandId": "0",
+      "representativeImage": "https://picsum.photos/800",
+      "category": [
+        {
+          "id": 0,
+          "name": "0번카테고리"
+        }
+      ],
+      "isLike": false
+    },
+    {
+      "id": "100005",
+      "name": "홈 상품 테스트",
+      "price": 25300,
+      "originPrice": 499000,
+      "createdAt": "2023-07-13T05:24:39.276Z",
+      "brandName": "0번브랜드",
+      "brandId": "0",
+      "representativeImage": "https://picsum.photos/800",
+      "category": [
+        {
+          "id": 0,
+          "name": "0번카테고리"
+        }
+      ],
+      "isLike": false
+    }
+  ],
+  "total": 6
+}

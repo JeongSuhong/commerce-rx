@@ -13,5 +13,5 @@ enum UserDefaultKeys: String {
 }
 
 enum ViewStatus: String {
-  case none, loading, error
+  case none, loading, error, finish
 }

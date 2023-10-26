@@ -17,9 +17,14 @@
 		C42143E52AA9C9E20094230D /* HomeNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42143E42AA9C9E20094230D /* HomeNewViewController.swift */; };
 		C42143E82AA9CE520094230D /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42143E72AA9CE520094230D /* NSObject+Extensions.swift */; };
 		C42143EB2AA9D7DD0094230D /* BaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42143EA2AA9D7DD0094230D /* BaseTableCell.swift */; };
+		C434B2FD2ADD35D10009BA59 /* BaseCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C434B2FC2ADD35D10009BA59 /* BaseCollectionReusableView.swift */; };
+		C434B2FF2ADD42CC0009BA59 /* UICollectionViewLayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C434B2FE2ADD42CC0009BA59 /* UICollectionViewLayout+Extensions.swift */; };
 		C460AE262ACD4B27008D22A4 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460AE252ACD4B27008D22A4 /* UIScrollView+Extensions.swift */; };
 		C460AE2D2ACD69ED008D22A4 /* HomeMoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460AE2A2ACD69ED008D22A4 /* HomeMoreListView.swift */; };
 		C460AE2F2ACD69ED008D22A4 /* HomeMoreListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C460AE2C2ACD69ED008D22A4 /* HomeMoreListView.xib */; };
+		C462B7F52ADE777700FCD1C7 /* ProductDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C462B7F22ADE777700FCD1C7 /* ProductDetailViewController.storyboard */; };
+		C462B7F62ADE777700FCD1C7 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C462B7F32ADE777700FCD1C7 /* ProductDetailViewController.swift */; };
+		C462B7F72ADE777700FCD1C7 /* ProductDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C462B7F42ADE777700FCD1C7 /* ProductDetailReactor.swift */; };
 		C48918762AD5461B00D7EB30 /* HomeProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48918732AD5461B00D7EB30 /* HomeProductView.swift */; };
 		C48918772AD5461B00D7EB30 /* HomeProductViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48918742AD5461B00D7EB30 /* HomeProductViewReactor.swift */; };
 		C48918782AD5461B00D7EB30 /* HomeProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C48918752AD5461B00D7EB30 /* HomeProductView.xib */; };
@@ -110,6 +115,8 @@
 		C42143E42AA9C9E20094230D /* HomeNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewViewController.swift; sourceTree = "<group>"; };
 		C42143E72AA9CE520094230D /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
 		C42143EA2AA9D7DD0094230D /* BaseTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableCell.swift; sourceTree = "<group>"; };
+		C434B2FC2ADD35D10009BA59 /* BaseCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionReusableView.swift; sourceTree = "<group>"; };
+		C434B2FE2ADD42CC0009BA59 /* UICollectionViewLayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewLayout+Extensions.swift"; sourceTree = "<group>"; };
 		C45E86492AAF16A100C44B50 /* NanumBarunGothicLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicLight.ttf; sourceTree = "<group>"; };
 		C45E864A2AAF16A100C44B50 /* NanumBarunGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.ttf; sourceTree = "<group>"; };
 		C45E864B2AAF16A100C44B50 /* NanumBarunGothicUltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicUltraLight.ttf; sourceTree = "<group>"; };
@@ -117,6 +124,9 @@
 		C460AE252ACD4B27008D22A4 /* UIScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extensions.swift"; sourceTree = "<group>"; };
 		C460AE2A2ACD69ED008D22A4 /* HomeMoreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMoreListView.swift; sourceTree = "<group>"; };
 		C460AE2C2ACD69ED008D22A4 /* HomeMoreListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMoreListView.xib; sourceTree = "<group>"; };
+		C462B7F22ADE777700FCD1C7 /* ProductDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetailViewController.storyboard; sourceTree = "<group>"; };
+		C462B7F32ADE777700FCD1C7 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		C462B7F42ADE777700FCD1C7 /* ProductDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailReactor.swift; sourceTree = "<group>"; };
 		C48918732AD5461B00D7EB30 /* HomeProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductView.swift; sourceTree = "<group>"; };
 		C48918742AD5461B00D7EB30 /* HomeProductViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductViewReactor.swift; sourceTree = "<group>"; };
 		C48918752AD5461B00D7EB30 /* HomeProductView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeProductView.xib; sourceTree = "<group>"; };
@@ -250,6 +260,7 @@
 				C489187E2AD54F9A00D7EB30 /* String+Extensions.swift */,
 				C48918802AD635F300D7EB30 /* Int+Extensions.swift */,
 				C48918842AD649AD00D7EB30 /* UIFont+Extensions.swift */,
+				C434B2FE2ADD42CC0009BA59 /* UICollectionViewLayout+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -262,6 +273,7 @@
 				C40AC2C22AC17D8D00C8C9F4 /* BaseView.swift */,
 				C40AC2CA2AC19AB700C8C9F4 /* BaseViewController.swift */,
 				C4B353BC2AC2CB0000921ADC /* BaseImageView.swift */,
+				C434B2FC2ADD35D10009BA59 /* BaseCollectionReusableView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -292,6 +304,16 @@
 				C460AE2A2ACD69ED008D22A4 /* HomeMoreListView.swift */,
 			);
 			path = MoreList;
+			sourceTree = "<group>";
+		};
+		C462B7EA2ADE774300FCD1C7 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C462B7F22ADE777700FCD1C7 /* ProductDetailViewController.storyboard */,
+				C462B7F32ADE777700FCD1C7 /* ProductDetailViewController.swift */,
+				C462B7F42ADE777700FCD1C7 /* ProductDetailReactor.swift */,
+			);
+			path = ProductDetail;
 			sourceTree = "<group>";
 		};
 		C48918722AD5460C00D7EB30 /* Product */ = {
@@ -451,6 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				C49927D82ABA8B5A0007C299 /* Common */,
+				C462B7EA2ADE774300FCD1C7 /* ProductDetail */,
 				C4A4E0532AA99C700046F60C /* Home */,
 				C4A4E0412AA996430046F60C /* LaunchScreen.storyboard */,
 			);
@@ -654,6 +677,7 @@
 				C49D7A692ABD73A5000F4CB8 /* CommonErrorView.xib in Resources */,
 				C40AC2C92AC196E300C8C9F4 /* error.gif in Resources */,
 				C4A0C9632AB1BA5D00F46AD1 /* NanumBarunGothicLight.ttf in Resources */,
+				C462B7F52ADE777700FCD1C7 /* ProductDetailViewController.storyboard in Resources */,
 				C4A4E0432AA996430046F60C /* LaunchScreen.storyboard in Resources */,
 				C49D7A652ABD7395000F4CB8 /* CommonLoadingView.xib in Resources */,
 				C49D7A7F2ABD9A17000F4CB8 /* loading.gif in Resources */,
@@ -672,6 +696,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4A6C6502AB97C6300016AFB /* HomeSearchViewReactor.swift in Sources */,
+				C434B2FF2ADD42CC0009BA59 /* UICollectionViewLayout+Extensions.swift in Sources */,
 				C49D7A5E2ABD2B98000F4CB8 /* Data+Extensions.swift in Sources */,
 				C42143E52AA9C9E20094230D /* HomeNewViewController.swift in Sources */,
 				C49927D72ABA8A3C0007C299 /* HomeStyleHeaderView.swift in Sources */,
@@ -697,7 +722,9 @@
 				C49D7A672ABD739C000F4CB8 /* CommonLoadingView.swift in Sources */,
 				C49D7A532ABAF051000F4CB8 /* ApiProvider.swift in Sources */,
 				C41851692AC4165C004ADF84 /* HomeCategoryView.swift in Sources */,
+				C434B2FD2ADD35D10009BA59 /* BaseCollectionReusableView.swift in Sources */,
 				C4B353BD2AC2CB0000921ADC /* BaseImageView.swift in Sources */,
+				C462B7F62ADE777700FCD1C7 /* ProductDetailViewController.swift in Sources */,
 				C40AC2C72AC190F900C8C9F4 /* Codable+Extensions.swift in Sources */,
 				C4A6C65F2AB98A1100016AFB /* UIView+Extensions.swift in Sources */,
 				C460AE262ACD4B27008D22A4 /* UIScrollView+Extensions.swift in Sources */,
@@ -707,6 +734,7 @@
 				C49D7A552ABAF4E7000F4CB8 /* HomeApi.swift in Sources */,
 				C49D7A4C2ABADAB5000F4CB8 /* ParallaxView.swift in Sources */,
 				C4A6C6662AB9A26800016AFB /* HomeStyleReactor.swift in Sources */,
+				C462B7F72ADE777700FCD1C7 /* ProductDetailReactor.swift in Sources */,
 				C49D7A502ABADD95000F4CB8 /* ParallaxPagerView.swift in Sources */,
 				C4A0C95F2AB1B67700F46AD1 /* HomeFlow.swift in Sources */,
 				C49D7A612ABD344C000F4CB8 /* Const.swift in Sources */,

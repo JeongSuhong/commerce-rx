@@ -72,31 +72,21 @@ case setInfo(ProductModel)
 extension HomeProductViewReactor {
   private func setLike() -> Observable<Mutation> {
     let id = self.id
-    let realm = try! Realm()
     
-    let observ: Observable<Void> = .create { observer in
-      let task = Task { @MainActor [weak self] in
-        do {
-          let _ = try await ApiProvider.request(ProductApi.like(id))
-          
-          if let model = self?.currentState.info {
-            try! realm.write {
-              model.isLike = true
-            }
+    let observ: Observable<Void> = .toEmptyTask(
+      Task { @MainActor [weak self] in
+        let _ = try await ApiProvider.request(ProductApi.like(id))
+        
+        if let model = self?.currentState.info {
+          let realm = try! await Realm()
+          try! realm.write {
+            model.isLike = true
           }
-          
-          observer.onNext(())
-          observer.onCompleted()
-        } catch {
-          observer.onError(error)
         }
       }
-      
-      return Disposables.create { task.cancel() }
-    }
+    )
     
     return observ
-      .errorHandling()
       .flatMap { _ -> Observable<Mutation> in
         return .empty()
       }
@@ -104,31 +94,21 @@ extension HomeProductViewReactor {
   
   private func setDislike() -> Observable<Mutation> {
     let id = self.id
-    let realm = try! Realm()
     
-    let observ: Observable<Void> = .create { observer in
-      let task = Task { @MainActor [weak self] in
-        do {
-          let _ = try await ApiProvider.request(ProductApi.dislike(id))
-          
-          if let model = self?.currentState.info {
-            try! realm.write {
-              model.isLike = false
-            }
+    let observ: Observable<Void> = .toEmptyTask(
+      Task { @MainActor [weak self] in
+        let _ = try await ApiProvider.request(ProductApi.dislike(id))
+        
+        if let model = self?.currentState.info {
+          let realm = try! await Realm()
+          try! realm.write {
+            model.isLike = false
           }
-          
-          observer.onNext(())
-          observer.onCompleted()
-        } catch {
-          observer.onError(error)
         }
       }
-      
-      return Disposables.create { task.cancel() }
-    }
+    )
     
     return observ
-      .errorHandling()
       .flatMap { _ -> Observable<Mutation> in
         return .empty()
       }

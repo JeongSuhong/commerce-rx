@@ -32,7 +32,7 @@ class ProductDetailReactor: Reactor, Stepper {
   func mutate(action: Action) -> Observable<Mutation> {
     switch action {
     case .refresh:
-      return refresh
+      return refresh()
     }
 
     return .empty()

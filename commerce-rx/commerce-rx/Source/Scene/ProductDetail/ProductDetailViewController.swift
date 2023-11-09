@@ -7,18 +7,46 @@ import ReactorKit
 
 // MARK: - ViewController
 
-// 오늘의 집 스크롤시 사진 위치 유지 + 에이블리 스크롤시 상단 타이틀바 알파 변경 둘다 섞어 넣어보기!
-
 class ProductDetailViewController: BaseViewController, StoryboardBased, StoryboardView {
   
   typealias Reactor = ProductDetailReactor
   
+  @IBOutlet weak var navView: ProductDetailNavView!
+  @IBOutlet weak var mainView: UIScrollView!
+  
+  @IBOutlet weak var imagesView: StickyPagerStackView!
+  @IBOutlet weak var imagesConst: NSLayoutConstraint?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    mainView.contentInsetAdjustmentBehavior = .never
   }
   
   func bind(reactor: Reactor) {
     
+    reactor.pulse(\.$info)
+      .compactMap { $0 }
+      .observe(on: MainScheduler.asyncInstance)
+      .bind(with: self) { vc, info in
+        vc.imagesView.bind(info.images.map { $0.url })
+      }.disposed(by: disposeBag)
+    
+    mainView.rx.contentOffset
+      .distinctUntilChanged()
+      .observe(on: MainScheduler.asyncInstance)
+      .bind(with: self) { vc, offset in
+        let percentY = (offset.y > 300.0 ? 300.0 : offset.y) / 300.0
+        vc.navView.bgView.alpha = percentY
+        vc.navView.setScrollPercent(percentY)
+        vc.imagesView.scrollOffsetAction.onNext(offset)
+      }.disposed(by: disposeBag)
+  
+    navView.dismissView.rx.tap
+      .observe(on: MainScheduler.asyncInstance)
+      .bind(with: self) { vc, _ in
+        vc.dismissAction()
+      }.disposed(by: disposeBag)
   }
 }
 

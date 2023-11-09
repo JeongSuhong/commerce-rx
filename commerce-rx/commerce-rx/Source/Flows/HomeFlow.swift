@@ -8,6 +8,7 @@ import Reusable
 
 enum HomeStep: Step {
   case main
+  case productDetail(id: String)
 }
 
 // MARK: - Flow
@@ -44,6 +45,11 @@ final class HomeFlow: Flow {
       vc.reactor = reactor
       self.navigationController.setViewControllers([vc], animated: false)
       return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: reactor))
+      
+    case .productDetail(let id):
+      let flow = ProductFlow(self.navigationController)
+      Flows.use(flow, when: .created, block: { _ in })
+      return .one(flowContributor: .contribute(withNextPresentable: flow, withNextStepper: OneStepper(withSingleStep: ProductStep.main(id: id))))
     }
   }
 }

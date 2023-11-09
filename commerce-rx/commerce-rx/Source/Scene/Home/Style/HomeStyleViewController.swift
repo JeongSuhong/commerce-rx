@@ -36,6 +36,12 @@ class HomeStyleViewController: BaseViewController, StoryboardBased, StoryboardVi
   }
   
   func bind(reactor: Reactor) {
+    mainView.rx.itemSelected
+      .map { Reactor.Action.selectItem($0.row) }
+      .bind(to: reactor.action)
+      .disposed(by: disposeBag)
+    
+  
     reactor.state.map { $0.status }
       .distinctUntilChanged()
       .observe(on: MainScheduler.asyncInstance)
@@ -47,10 +53,15 @@ class HomeStyleViewController: BaseViewController, StoryboardBased, StoryboardVi
       }.disposed(by: disposeBag)
 
     mainView.rx.contentOffset
+      .map { $0.y < 30 }
       .distinctUntilChanged()
-      .bind(with: self) { vc, offset in
-        debugPrint(offset.y)
-        
+      .bind(to: moveUpView.rx.isHidden)
+      .disposed(by: disposeBag)
+    
+    moveUpView.rx.tap
+      .observe(on: MainScheduler.asyncInstance)
+      .bind(with: self) { vc, _ in
+        vc.mainView.setContentOffset(.zero, animated: true)
       }.disposed(by: disposeBag)
   }
 }
@@ -75,6 +86,12 @@ extension HomeStyleViewController: UICollectionViewDelegate, UICollectionViewDat
     guard let reactor = self.reactor else { return }
     
     view.disposeBag = DisposeBag()
+    
+    view.relateView.mainView.rx.itemSelected
+      .map { Reactor.Action.selectRelateItem($0.row) }
+      .bind(to: reactor.action)
+      .disposed(by: view.disposeBag)
+    
     
     Observable.combineLatest(reactor.pulse(\.$banners).compactMap{ $0 },
                              self.rx.viewWillLayoutSubviews.take(1))

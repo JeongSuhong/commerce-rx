@@ -7,6 +7,7 @@ enum ProductApi: ApiTargetType {
 case list(ProductListReq)
   case like(String)
   case dislike(String)
+  case detail(String)
   
   var path: String {
     switch self {
@@ -45,6 +46,9 @@ return .get
         return NSDataAsset(name: "product-list")!.data
       }
       
+    case .detail:
+      return NSDataAsset(name: "product-detail")!.data
+      
     default:
       return Data()
       }
@@ -82,16 +86,40 @@ struct ProductListRes: Codable {
     let category: [productCategoryRes]
     let isLike: Bool
   }
+}
 
-  struct productBenefitRes: Codable {
-    let type: ProductBenefitType
-    let amount: Int
-  }
+struct productBenefitRes: Codable {
+  let type: ProductBenefitType
+  let amount: Int
+}
 
-  struct productCategoryRes: Codable {
-    let id: Int
-    let name: String
-  }
+struct productCategoryRes: Codable {
+  let id: Int
+  let name: String
+}
+
+struct ProductDetailRes: Codable {
+  let id: String
+  let type: ProductType?
+  let name: String
+  let price: Int
+  let originPrice: Int
+  let createdAt: String
+  let brandName: String
+  let brandId: String
+  let representativeImage: String
+  let images: [ProductImageRes]
+  let benefit: productBenefitRes?
+  let category: [productCategoryRes]
+  let isLike: Bool
+  let detailContent: String
+  let reviewRating: Double
+  let reviewCount: Int
+}
+
+struct ProductImageRes: Codable {
+  let id: String
+  let url: String
 }
 
 

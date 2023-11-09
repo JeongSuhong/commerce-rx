@@ -6,10 +6,10 @@ import RxSwift
 import Reusable
 import ReusableKit
 import RxReusableKit
+import SnapKit
 
 class HomeStyleHeaderView: UIView, NibOwnerLoadable {
   
-  @IBOutlet weak var mainView: UIStackView!
   @IBOutlet weak var bannerView: ParallaxPagerView!
   @IBOutlet weak var categoryView: HomeCategoryView!
   @IBOutlet weak var relateView: HomeMoreListView!
@@ -30,8 +30,11 @@ class HomeStyleHeaderView: UIView, NibOwnerLoadable {
     bind()
   }
   
+  
   private func bind() {
     relateView.titleLabel.text = "내가 본 상품의 연관 상품"
     titleLabel.text = "\("-")님을 위한 추천 상품"
+    
+    
   }
 }

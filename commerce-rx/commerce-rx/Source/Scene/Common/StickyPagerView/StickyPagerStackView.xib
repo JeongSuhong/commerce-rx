@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StickyPagerStackView" customModule="commerce_rx" customModuleProvider="target">
+            <connections>
+                <outlet property="controlView" destination="pDX-1i-eNp" id="VDw-BT-LUo"/>
+                <outlet property="mainView" destination="t8u-Mc-7U7" id="KUS-MZ-qzi"/>
+                <outlet property="scrollView" destination="oQ5-g4-70J" id="DYM-1v-Lio"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Eia-Om-SIl">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQ5-g4-70J">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="300" translatesAutoresizingMaskIntoConstraints="NO" id="t8u-Mc-7U7">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="t8u-Mc-7U7" firstAttribute="top" secondItem="8WR-uZ-kcD" secondAttribute="top" id="AJn-xW-NQe"/>
+                        <constraint firstItem="t8u-Mc-7U7" firstAttribute="height" secondItem="iwE-D8-o9u" secondAttribute="height" id="Vok-tB-bac"/>
+                        <constraint firstItem="t8u-Mc-7U7" firstAttribute="trailing" secondItem="8WR-uZ-kcD" secondAttribute="trailing" id="Ybq-P4-ZZM"/>
+                        <constraint firstItem="t8u-Mc-7U7" firstAttribute="bottom" secondItem="8WR-uZ-kcD" secondAttribute="bottom" id="ZhO-0y-h7R"/>
+                        <constraint firstItem="t8u-Mc-7U7" firstAttribute="leading" secondItem="8WR-uZ-kcD" secondAttribute="leading" id="jPp-YJ-Qv6"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="8WR-uZ-kcD"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="iwE-D8-o9u"/>
+                </scrollView>
+                <view contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="pDX-1i-eNp" customClass="FSPageControl" customModule="FSPagerView">
+                    <rect key="frame" x="125" y="266" width="50" height="20"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="oQ5-g4-70J" firstAttribute="top" secondItem="Eia-Om-SIl" secondAttribute="top" id="1g7-wF-KDd"/>
+                <constraint firstItem="pDX-1i-eNp" firstAttribute="centerX" secondItem="Eia-Om-SIl" secondAttribute="centerX" id="4Te-22-muh"/>
+                <constraint firstAttribute="trailing" secondItem="oQ5-g4-70J" secondAttribute="trailing" id="F8T-vF-VlY"/>
+                <constraint firstAttribute="bottom" secondItem="oQ5-g4-70J" secondAttribute="bottom" id="Xlq-7g-Y88"/>
+                <constraint firstAttribute="bottom" secondItem="pDX-1i-eNp" secondAttribute="bottom" constant="14" id="cvM-4D-Xkz"/>
+                <constraint firstItem="oQ5-g4-70J" firstAttribute="leading" secondItem="Eia-Om-SIl" secondAttribute="leading" id="n3w-cX-LHT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-288" y="-8"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="pDX-1i-eNp">
+            <size key="intrinsicContentSize" width="50" height="20"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

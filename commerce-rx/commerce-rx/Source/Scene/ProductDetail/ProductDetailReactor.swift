@@ -4,28 +4,52 @@ import Foundation
 import ReactorKit
 import RxFlow
 import RxRelay
-
+import RealmSwift
 
 class ProductDetailReactor: Reactor, Stepper {
 
   enum Action {
-   case refresh
+    case refresh
+    case setModel(ProductModel)
   }
   
   enum Mutation {
-    
+    case setInfo(ProductDetailRes)
+  case setModel(ProductModel)
   }
   
   struct State {
-    
+    @Pulse var model: ProductModel?
+    @Pulse var info: ProductDetailRes?
   }
   
   let initialState: State
   let steps = PublishRelay<Step>()
   
-  init() {
-    initialState = State()
+  private let id: String
+  private var token: NotificationToken?
+  
+  init(id: String) {
+    self.id = id
+    
+    let realm = try! Realm()
+    let model = realm.object(ofType: ProductModel.self, forPrimaryKey: id)
+    
+    initialState = State(model: model)
+    if let model { bindRealm(model) }
+    
     self.action.onNext(.refresh)
+  }
+  
+  private func bindRealm(_ model: ProductModel) {
+    token = model.observe { [weak self] status in
+      switch status {
+      case .change:
+        self?.action.onNext(.setModel(model))
+        break
+      default: break
+      }
+    }
   }
   
   
@@ -33,6 +57,10 @@ class ProductDetailReactor: Reactor, Stepper {
     switch action {
     case .refresh:
       return refresh()
+      
+    case .setModel(let model):
+      return .just(.setModel(model))
+      
     }
 
     return .empty()
@@ -40,9 +68,12 @@ class ProductDetailReactor: Reactor, Stepper {
   
   func reduce(state: State, mutation: Mutation) -> State {
     var newState = state
-//    switch mutation {
-//
-//    }
+    switch mutation {
+    case .setInfo(let value):
+      newState.info = value
+    case .setModel(let value):
+      newState.model = value
+    }
     
     return newState
   }
@@ -50,39 +81,24 @@ class ProductDetailReactor: Reactor, Stepper {
 
 extension ProductDetailReactor {
   private func refresh() -> Observable<Mutation> {
-//    let observ: Observable<(BannersRes, HomeCategorysRes, ProductListRes, ProductListRes)> = .create { observer in
-//      let task = Task { @MainActor in
-//        do {
-//          async let bannerAction: BannersRes = ApiProvider.requestJson(HomeApi.banners)
-//          async let categorysAction: HomeCategorysRes = ApiProvider.requestJson(HomeApi.categorys(HomeCategorysReq(type: .home)))
-//          async let relateProductAction: ProductListRes = ApiProvider.requestJson(ProductApi.list(.init(start: 0, perPage: 20, type: .related)))
-//          async let productsAction: ProductListRes = ApiProvider.requestJson(ProductApi.list(.init(start: 0, perPage: 20, type: .none)))
-//          
-//          let (banners, categorys, relateProducts, products) = try await (bannerAction, categorysAction, relateProductAction, productsAction)
-//          
-//          let realm = try! await Realm()
-//          try! realm.write {
-//            realm.add(relateProducts.data.map { ProductModel($0) }, update: .modified)
-//            realm.add(products.data.map { ProductModel($0) }, update: .modified)
-//          }
-//          
-//          observer.onNext((banners, categorys, relateProducts, products))
-//          observer.onCompleted()
-//        } catch {
-//          observer.onError(error)
-//        }
-//      }
-//      
-//      return Disposables.create { task.cancel() }
-//    }
-//    
-//    return observ
-//      .errorHandling()
-//      .flatMap { args -> Observable<Mutation> in
-//        return .concat(.just(.setRefresh(args)),
-//                       .just(.setStatus(.none)))
-//      }
+    let id = self.id
     
-    return .empty()
+    let observ: Observable<ProductDetailRes> = .toTask(
+      Task { @MainActor in
+        let res: ProductDetailRes = try await ApiProvider.requestJson(ProductApi.detail(id))
+        
+        let realm = try! await Realm()
+        try realm.write {
+          realm.add(ProductModel(res), update: .modified)
+        }
+        
+        return res
+      }
+    )
+    
+    return observ
+      .flatMap { res -> Observable<Mutation> in
+        return .just(.setInfo(res))
+      }
   }
 }

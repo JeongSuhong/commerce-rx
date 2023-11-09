@@ -36,7 +36,7 @@ class HomeProductView: UIView, NibOwnerLoadable, StoryboardView {
   }
   
   func bind(reactor: Reactor) {
-    likeView.rx.tapGesture().when(.recognized)
+    likeView.rx.tap
       .throttle(.seconds(1), scheduler: MainScheduler.instance)
       .map { _ in Reactor.Action.switchLike }
       .bind(to: reactor.action)
@@ -86,7 +86,7 @@ class HomeProductView: UIView, NibOwnerLoadable, StoryboardView {
     let error = StringStyle(.color(.init(resource: .coF64444)))
     return StringStyle(
       .font(.nanumGothicBold(size: 18)),
-      .color(.init(resource: .coText)),
+      .color(.init(resource: .co3333336)),
       .xmlRules([.style("e", error)])
     )
   }

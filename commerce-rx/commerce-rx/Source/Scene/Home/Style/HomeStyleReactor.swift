@@ -5,11 +5,13 @@ import RxFlow
 import RxRelay
 import RealmSwift
 
-class HomeStyleReactor: Reactor, Stepper {
+class HomeStyleReactor: Reactor {
   
   enum Action {
     case refresh
     case selectBanner(Int)
+    case selectItem(Int)
+    case selectRelateItem(Int)
   }
   
   enum Mutation {
@@ -28,11 +30,10 @@ case setStatus(ViewStatus)
 
   
   let initialState: State
-  let steps = PublishRelay<Step>()
-  
-  
+  let steps: PublishRelay<Step>?
 
-  init() {
+  init(steps: PublishRelay<Step>?) {
+    self.steps = steps
     initialState = State()
     self.action.onNext(.refresh)
   }
@@ -43,7 +44,7 @@ case setStatus(ViewStatus)
       return .concat(.just(.setStatus(.loading)), refresh())
       
     case .selectBanner(let index):
-      guard let banner = currentState.banners?.data[safe: index] else { return .empty() }
+      guard let banner = currentState.banners?.data[safe: index] else { break }
       switch banner.type {
       case .url:
         if let url = URL(string: banner.value) {
@@ -52,7 +53,14 @@ case setStatus(ViewStatus)
         
       default: break
       }
-
+      
+    case .selectItem(let index):
+      guard let id = currentState.info[safe: index] else { break }
+      steps?.accept(HomeStep.productDetail(id: id))
+      
+    case .selectRelateItem(let index):
+      guard let id = currentState.relateProducts[safe: index] else { break }
+      steps?.accept(HomeStep.productDetail(id: id))
     }
     
     return .empty()

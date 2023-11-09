@@ -1,9 +1,4 @@
-//
-//  ParallaxPagerView.swift
-//  commerce-rx
-//
-//  Created by Mocca on 2023/09/20.
-//
+
 
 import Foundation
 import UIKit

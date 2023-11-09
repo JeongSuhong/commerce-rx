@@ -41,6 +41,27 @@ class ProductModel: Object {
     
     self.isLike = res.isLike
   }
+  
+  convenience init(_ res: ProductDetailRes) {
+    self.init()
+    self.id = res.id
+    self.type = res.type
+    self.name = res.name
+    self.price = res.price
+    self.originPrice = res.originPrice
+    self.createdAt = res.createdAt.asDate()
+    self.brandName = res.brandName
+    self.brandId = res.brandId
+    self.mainImage = res.representativeImage
+
+    if let originBenefit = res.benefit {
+      self.benefit = .init(originBenefit)
+    }
+    
+    self.category.append(objectsIn: res.category.map { ProductCategoryModel($0) })
+    
+    self.isLike = res.isLike
+  }
 }
 
 enum ProductBenefitType: String, Codable, PersistableEnum {
@@ -51,7 +72,7 @@ class ProductBenefitModel: EmbeddedObject {
   @Persisted var type: ProductBenefitType
   @Persisted var amount: Int
   
-  convenience init(_ info: ProductListRes.productBenefitRes) {
+  convenience init(_ info: productBenefitRes) {
     self.init()
     self.type = info.type
     self.amount = info.amount
@@ -69,7 +90,7 @@ class ProductCategoryModel: EmbeddedObject {
   @Persisted var id: Int
   @Persisted var name: String
   
-  convenience init(_ info: ProductListRes.productCategoryRes) {
+  convenience init(_ info: productCategoryRes) {
     self.init()
     self.id = info.id
     self.name = info.name

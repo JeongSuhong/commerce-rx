@@ -33,7 +33,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmf-ng-gFD">
                             <rect key="frame" x="152" y="192" width="41.333333333333343" height="20.333333333333343"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" name="co-text"/>
+                            <color key="textColor" name="co-232A30-FFFFFF"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="bonMotStyleName" value="nanumB_24"/>
@@ -53,7 +53,7 @@
         </view>
     </objects>
     <resources>
-        <namedColor name="co-text">
+        <namedColor name="co-232A30-FFFFFF">
             <color red="0.13725490196078433" green="0.16470588235294117" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

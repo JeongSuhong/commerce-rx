@@ -6,6 +6,7 @@
     "createdAt": "2023-07-13T05:24:39.276Z",
     "brandName": "0번브랜드",
     "brandId": "0",
+    "representativeImage": "https://picsum.photos/800",
     "images": [
         {
             "id": "10000",

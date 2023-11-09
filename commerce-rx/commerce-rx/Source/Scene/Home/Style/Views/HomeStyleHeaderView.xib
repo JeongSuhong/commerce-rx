@@ -12,7 +12,6 @@
             <connections>
                 <outlet property="bannerView" destination="OGS-Tf-g9X" id="ujG-QB-om9"/>
                 <outlet property="categoryView" destination="nbB-Xj-hEb" id="Vbt-Wn-EpL"/>
-                <outlet property="mainView" destination="exx-Mu-DSh" id="gqV-4z-mAV"/>
                 <outlet property="relateView" destination="Air-X0-phM" id="QnC-Tg-rIm"/>
                 <outlet property="titleLabel" destination="Mas-vB-CTs" id="PZY-51-lq2"/>
             </connections>
@@ -43,7 +42,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mas-vB-CTs">
                                     <rect key="frame" x="16.000000000000004" y="0.0" width="41.333333333333343" height="50"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" name="co-text"/>
+                                    <color key="textColor" name="co-232A30-FFFFFF"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="bonMotStyleName" value="nanumB_20"/>
@@ -73,7 +72,7 @@
         </view>
     </objects>
     <resources>
-        <namedColor name="co-text">
+        <namedColor name="co-232A30-FFFFFF">
             <color red="0.13725490196078433" green="0.16470588235294117" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

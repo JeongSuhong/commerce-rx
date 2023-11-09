@@ -36,7 +36,7 @@
                             <rect key="frame" x="100" y="100" width="24" height="24"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" name="co-line-bold"/>
+                    <color key="backgroundColor" name="co-8E8E92.5"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="wXu-MD-p0l" secondAttribute="trailing" id="DvJ-2D-BrF"/>
                         <constraint firstAttribute="width" secondItem="lif-eE-yOO" secondAttribute="height" multiplier="1:1" id="L7W-R6-WP0"/>
@@ -58,7 +58,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwK-Gd-Voc">
                             <rect key="frame" x="0.0" y="8" width="130" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" name="co-text-disable"/>
+                            <color key="textColor" name="co-333333.6"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="bonMotStyleName" value="nanum_12"/>
@@ -67,7 +67,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdI-5K-URW">
                             <rect key="frame" x="0.0" y="32.5" width="130" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" name="co-text"/>
+                            <color key="textColor" name="co-232A30-FFFFFF"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="bonMotStyleName" value="nanum_14"/>
@@ -104,7 +104,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" name="co-line-bold"/>
+                                                    <color key="backgroundColor" name="co-8E8E92.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="K5F-fN-LEt" secondAttribute="trailing" constant="8" id="AEk-i0-3hC"/>
                                                         <constraint firstItem="K5F-fN-LEt" firstAttribute="top" secondItem="aCw-Ci-f8m" secondAttribute="top" id="E0P-qW-AC2"/>
@@ -163,7 +163,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="특가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoZ-Kk-Kub">
                                                     <rect key="frame" x="8" y="0.0" width="29.5" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="co-text"/>
+                                                    <color key="textColor" name="co-232A30-FFFFFF"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="bonMotStyleName" value="nanumB_10"/>
@@ -182,7 +182,7 @@
                                                     <real key="value" value="1"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                    <color key="value" name="co-line-bold"/>
+                                                    <color key="value" name="co-8E8E92.5"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
@@ -227,7 +227,7 @@
                 <constraint firstItem="lif-eE-yOO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xIt-YF-4jA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-288.40579710144931" y="-8.0357142857142847"/>
+            <point key="canvasLocation" x="-288.40579710144931" y="11.383928571428571"/>
         </view>
     </objects>
     <resources>
@@ -235,13 +235,13 @@
         <namedColor name="AccentColor">
             <color red="1" green="0.36862745098039218" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="co-line-bold">
+        <namedColor name="co-8E8E92.5">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.5725490196078431" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="co-text">
+        <namedColor name="co-232A30-FFFFFF">
             <color red="0.13725490196078433" green="0.16470588235294117" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="co-text-disable">
+        <namedColor name="co-333333.6">
             <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

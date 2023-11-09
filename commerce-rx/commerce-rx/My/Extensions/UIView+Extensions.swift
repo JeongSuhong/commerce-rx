@@ -1,5 +1,7 @@
 
 import UIKit
+import RxSwift
+import RxGesture
 
 extension UIView {
     @IBInspectable
@@ -22,4 +24,10 @@ extension UIView {
         get { layer.borderWidth }
         set { layer.borderWidth = newValue }
     }
+}
+
+extension Reactive where Base: UIView {
+  var tap: Observable<UITapGestureRecognizer> {
+    return base.rx.tapGesture().when(.recognized)
+  }
 }

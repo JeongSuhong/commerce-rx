@@ -30,7 +30,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="odm-W8-ACx"/>
-            <color key="backgroundColor" name="co-lodaing-bg"/>
+            <color key="backgroundColor" name="co-E6E6E7"/>
             <constraints>
                 <constraint firstItem="zYx-fL-1aP" firstAttribute="width" secondItem="Iv8-AF-44b" secondAttribute="width" multiplier="0.1" id="9Ya-AP-xRJ"/>
                 <constraint firstItem="zYx-fL-1aP" firstAttribute="centerY" secondItem="Iv8-AF-44b" secondAttribute="centerY" id="Sdg-C3-KLj"/>
@@ -40,7 +40,7 @@
         </view>
     </objects>
     <resources>
-        <namedColor name="co-lodaing-bg">
+        <namedColor name="co-E6E6E7">
             <color red="0.90196078431372551" green="0.90196078431372551" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

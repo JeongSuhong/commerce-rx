@@ -63,7 +63,7 @@ setupPagerBar()
 
     changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
       oldCell?.label.bonMotStyleName = "nanum_10"
-      oldCell?.label.textColor = .init(resource: .coTextDisable)
+      oldCell?.label.textColor = .init(resource: .co8E8E925)
       newCell?.label.bonMotStyleName = "nanumB_10"
       newCell?.label.textColor = .black
     }
@@ -73,7 +73,7 @@ setupPagerBar()
   
   override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
     let styleVC = HomeStyleViewController.instantiate()
-    let styleReactor = HomeStyleReactor()
+    let styleReactor = HomeStyleReactor(steps: self.reactor?.steps)
     styleVC.reactor = styleReactor
 
 //    styleVC.rx.isDownScroll

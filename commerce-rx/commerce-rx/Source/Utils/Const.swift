@@ -9,7 +9,7 @@ enum Const {
 }
 
 enum UserDefaultKeys: String {
-  case accessToken
+  case accessToken, refreshToken
 }
 
 enum ViewStatus: String {

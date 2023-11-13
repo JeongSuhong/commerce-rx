@@ -17,6 +17,7 @@
 		C42143E52AA9C9E20094230D /* HomeNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42143E42AA9C9E20094230D /* HomeNewViewController.swift */; };
 		C42143E82AA9CE520094230D /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42143E72AA9CE520094230D /* NSObject+Extensions.swift */; };
 		C42143EB2AA9D7DD0094230D /* BaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42143EA2AA9D7DD0094230D /* BaseTableCell.swift */; };
+		C42731EE2AFCDCEF00B372C2 /* AuthApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42731ED2AFCDCEF00B372C2 /* AuthApi.swift */; };
 		C434B2FD2ADD35D10009BA59 /* BaseCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C434B2FC2ADD35D10009BA59 /* BaseCollectionReusableView.swift */; };
 		C434B2FF2ADD42CC0009BA59 /* UICollectionViewLayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C434B2FE2ADD42CC0009BA59 /* UICollectionViewLayout+Extensions.swift */; };
 		C460AE262ACD4B27008D22A4 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460AE252ACD4B27008D22A4 /* UIScrollView+Extensions.swift */; };
@@ -128,6 +129,7 @@
 		C42143E42AA9C9E20094230D /* HomeNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewViewController.swift; sourceTree = "<group>"; };
 		C42143E72AA9CE520094230D /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
 		C42143EA2AA9D7DD0094230D /* BaseTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableCell.swift; sourceTree = "<group>"; };
+		C42731ED2AFCDCEF00B372C2 /* AuthApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApi.swift; sourceTree = "<group>"; };
 		C434B2FC2ADD35D10009BA59 /* BaseCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionReusableView.swift; sourceTree = "<group>"; };
 		C434B2FE2ADD42CC0009BA59 /* UICollectionViewLayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewLayout+Extensions.swift"; sourceTree = "<group>"; };
 		C45E86492AAF16A100C44B50 /* NanumBarunGothicLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicLight.ttf; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			children = (
 				C49D7A542ABAF4E7000F4CB8 /* HomeApi.swift */,
 				C48918792AD54B4600D7EB30 /* ProductApi.swift */,
+				C42731ED2AFCDCEF00B372C2 /* AuthApi.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -761,6 +764,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C42731EE2AFCDCEF00B372C2 /* AuthApi.swift in Sources */,
 				C4A6C6502AB97C6300016AFB /* HomeSearchViewReactor.swift in Sources */,
 				C434B2FF2ADD42CC0009BA59 /* UICollectionViewLayout+Extensions.swift in Sources */,
 				C49D7A5E2ABD2B98000F4CB8 /* Data+Extensions.swift in Sources */,

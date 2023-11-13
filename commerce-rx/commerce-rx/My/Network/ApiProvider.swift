@@ -3,8 +3,10 @@
 import Foundation
 import Moya
 import RxSwift
+import Alamofire
 
 class ApiProvider {
+  //MARK: Cookie Provider
   static let shared: MoyaProvider<MultiTarget> = {
     let config = URLSessionConfiguration.default
     config.headers = .default
@@ -16,10 +18,70 @@ class ApiProvider {
     
     return MoyaProvider<MultiTarget>(
       stubClosure: MoyaProvider.delayedStub(0.5),
-      session: Session(configuration: config),
-      plugins: [MoyaLoggerPlugin(), AuthPlugin()]
+      session: Session(configuration: config, startRequestsImmediately: false),
+      plugins: [MoyaLoggerPlugin()]
     )
   }()
+  
+  //MARK: Token Provider
+  // https://lsj8706.tistory.com/21
+    static let tokenShared: MoyaProvider<MultiTarget> = {
+      let config = URLSessionConfiguration.default
+      config.headers = .default
+      config.urlCache = URLCache.shared
+      config.timeoutIntervalForRequest = 30
+      config.httpShouldSetCookies = false
+  
+      return MoyaProvider<MultiTarget>(
+        stubClosure: MoyaProvider.delayedStub(0.5),
+        session: Session(configuration: config, startRequestsImmediately: false, interceptor: AuthInterceptor.shared),
+        plugins: [MoyaLoggerPlugin()]
+      )
+    }()
+  
+  final class AuthInterceptor: RequestInterceptor {
+    static let shared = AuthInterceptor()
+    
+    private init() {}
+    
+    func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
+      guard urlRequest.url?.absoluteString.hasPrefix(Const.baseUrl) == true,
+            let accessToken = UserDefaults.standard.value(forKey: UserDefaultKeys.accessToken.rawValue) as? String else {
+        completion(.success(urlRequest))
+        return
+      }
+      
+      var urlRequest = urlRequest
+      urlRequest.addValue("Bearer " + accessToken, forHTTPHeaderField: "Authorization")
+      completion(.success(urlRequest))
+    }
+    
+    func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
+      // RefreshToken을 갱신했어도 401이 내려올 경우 retry를 무한루프 탈 수 있다.(거의 없겠지만) 예방할 수 있는 방법 생각해보기.
+      guard let response = request.task?.response as? HTTPURLResponse, response.statusCode == 401,
+            let refreshToken = UserDefaults.standard.value(forKey: UserDefaultKeys.refreshToken.rawValue) as? String else {
+        completion(.doNotRetryWithError(error))
+        return
+      }
+      
+      MoyaProvider<AuthApi>(plugins: [MoyaLoggerPlugin()]).request(.refreshToken(RefreshTokenReq(refreshToken: refreshToken))) { result in
+        switch result {
+        case .success(let result):
+          if let res = try? JSONDecoder().decode(RefreshTokenRes.self, from: result.data) {
+            UserDefaults.standard.setValue(res.accessToken, forKey: UserDefaultKeys.accessToken.rawValue)
+            UserDefaults.standard.setValue(res.refreshToken, forKey: UserDefaultKeys.refreshToken.rawValue)
+            completion(.retry)
+          } else {
+          //TODO: 로그아웃
+            completion(.doNotRetryWithError(error))
+          }
+        case .failure(let error):
+          //TODO: 로그아웃
+          completion(.doNotRetryWithError(error))
+        }
+      }
+    }
+  }
   
   @discardableResult
   static func request(_ target: ApiTargetType) async throws -> Any? {
@@ -125,16 +187,6 @@ struct MoyaLoggerPlugin: PluginType {
       print("\n\n")
     }
     #endif
-  }
-}
-
-struct AuthPlugin: PluginType {
-  let token = UserDefaults.standard.string(forKey: UserDefaultKeys.accessToken.rawValue) ?? ""
-  
-  func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
-    var request = request
-    request.addValue("Bearer" + token, forHTTPHeaderField: "Authorization")
-    return request
   }
 }
 

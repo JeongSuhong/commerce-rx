@@ -13,20 +13,16 @@ class HomeViewController: ButtonBarPagerTabStripViewController, StoryboardView, 
   @IBOutlet weak var navView: UIStackView!
   @IBOutlet weak var searchView: HomeSearchView!
   
-  
   var disposeBag = DisposeBag()
-  private var fullNavHeight: CGFloat = 0
+  private let searchViewHeight: CGFloat = 60
   
   override func viewDidLoad() {
-setupPagerBar()
+    setupPagerBar()
     searchView.reactor = HomeSearchViewReactor()
     
     super.viewDidLoad()
-    
-    navView.layoutIfNeeded()
-    fullNavHeight = navView.frame.height
-    containerTopConst.constant = fullNavHeight
-    searchView.snp.makeConstraints { $0.height.equalTo(60) }
+
+    searchView.snp.makeConstraints { $0.height.equalTo(searchViewHeight) }
   }
   
   func bind(reactor: Reactor) {
@@ -76,19 +72,18 @@ setupPagerBar()
     let styleReactor = HomeStyleReactor(steps: self.reactor?.steps)
     styleVC.reactor = styleReactor
 
-//    styleVC.rx.isDownScroll
-//      .distinctUntilChanged()
-//      .debounce(.milliseconds(500), scheduler: MainScheduler.asyncInstance)
-//      .observe(on: MainScheduler.asyncInstance)
-//      .bind(with: self) { vc, isDown in
-//
-//        UIView.animate(withDuration: 0.5, animations: {
-//          vc.searchView.isHidden = !isDown
-//          vc.containerTopConst.constant = isDown ? vc.fullNavHeight : vc.buttonBarView.frame.height
-//        })
-//      }.disposed(by: disposeBag)
-    
     let newVC = HomeNewViewController.instantiate()
+    
+    Observable.from([styleVC, newVC])
+      .flatMap { $0.isDownScroll }
+      .distinctUntilChanged()
+      .bind(with: self) { vc, isDown in
+        vc.containerTopConst.constant = isDown ? -vc.searchViewHeight : 0
+        
+        UIView.animate(withDuration: 0.5, animations: {
+          vc.view.layoutIfNeeded()
+        })
+      }.disposed(by: disposeBag)
     
     return [styleVC, newVC]
   }

@@ -18,9 +18,9 @@ final class MainFlow: Flow {
   init() {
     let tvc = UITabBarController()
 
-    tvc.view.backgroundColor = .init(resource: .coFFFFFF252E34)
-    tvc.tabBar.backgroundColor = .init(resource: .coFFFFFF252E34)
-    tvc.tabBar.barTintColor = .init(resource: .coFFFFFF252E34)
+    tvc.view.backgroundColor = .init(resource: .coBg)
+    tvc.tabBar.backgroundColor = .init(resource: .coBg)
+    tvc.tabBar.barTintColor = .init(resource: .coBg)
     tvc.tabBar.shadowImage = UIImage()
     tvc.tabBar.backgroundImage = UIImage()
     tvc.tabBar.tintColor = .init(resource: .accent)

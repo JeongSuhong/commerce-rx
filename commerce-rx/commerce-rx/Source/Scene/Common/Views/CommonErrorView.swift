@@ -1,13 +1,13 @@
 
 import Foundation
 import UIKit
-import Gifu
+import Lottie
 import Reusable
 import BonMot
 
 class CommonErrorView: UIView, NibOwnerLoadable {
   
-  @IBOutlet weak var mainView: GIFImageView!
+  @IBOutlet weak var mainView: LottieAnimationView!
   @IBOutlet weak var mainLabel: UILabel!
   
   override init(frame: CGRect) {
@@ -23,7 +23,8 @@ class CommonErrorView: UIView, NibOwnerLoadable {
   }
   
   private func bind() {
-    mainView.animate(withGIFNamed: "error")
+    mainView.contentMode = .scaleAspectFill
+    mainView.play()
     mainLabel.attributedText = "<e>Network Error!!!</e>\n잠시 후 다시 이용해주시기 바랍니다.".styled(with: getStyle())
   }
   

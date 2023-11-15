@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,20 +19,20 @@
             <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYx-fL-1aP" customClass="GIFImageView" customModule="Gifu">
-                    <rect key="frame" x="193.66666666666666" y="444.66666666666669" width="43" height="43"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYx-fL-1aP" customClass="LottieAnimationView" customModule="Lottie">
+                    <rect key="frame" x="185" y="436" width="60" height="60"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="zYx-fL-1aP" secondAttribute="height" multiplier="1:1" id="jNC-q9-BpA"/>
+                        <constraint firstAttribute="width" constant="60" id="6Oq-we-h7D"/>
+                        <constraint firstAttribute="height" constant="60" id="uxa-X8-2pK"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loading"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="lotti-loading"/>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="odm-W8-ACx"/>
             <color key="backgroundColor" name="co-E6E6E7"/>
             <constraints>
-                <constraint firstItem="zYx-fL-1aP" firstAttribute="width" secondItem="Iv8-AF-44b" secondAttribute="width" multiplier="0.1" id="9Ya-AP-xRJ"/>
                 <constraint firstItem="zYx-fL-1aP" firstAttribute="centerY" secondItem="Iv8-AF-44b" secondAttribute="centerY" id="Sdg-C3-KLj"/>
                 <constraint firstItem="zYx-fL-1aP" firstAttribute="centerX" secondItem="Iv8-AF-44b" secondAttribute="centerX" id="bnr-OO-RLQ"/>
             </constraints>

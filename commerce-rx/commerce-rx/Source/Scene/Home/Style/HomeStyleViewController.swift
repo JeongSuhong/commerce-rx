@@ -7,7 +7,7 @@ import ReusableKit
 import Reusable
 import ReactorKit
 
-class HomeStyleViewController: BaseViewController, StoryboardBased, StoryboardView, IndicatorInfoProvider {
+class HomeStyleViewController: BasePagerViewController, StoryboardBased, StoryboardView, IndicatorInfoProvider {
   
   enum Reusable {
     static let header = ReusableView<BaseCollectionReusableView<HomeStyleHeaderView>>()

@@ -2,12 +2,12 @@
 
 import Foundation
 import UIKit
-import Gifu
+import Lottie
 import Reusable
 
 class CommonLoadingView: UIView, NibOwnerLoadable {
   
-  @IBOutlet weak var mainView: GIFImageView!
+  @IBOutlet weak var mainView: LottieAnimationView!
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -22,6 +22,8 @@ class CommonLoadingView: UIView, NibOwnerLoadable {
   }
   
   private func bind() {
-    mainView.animate(withGIFNamed: "loading")
+    mainView.loopMode = .loop
+    mainView.contentMode = .scaleAspectFill
+    mainView.play()
   }
 }

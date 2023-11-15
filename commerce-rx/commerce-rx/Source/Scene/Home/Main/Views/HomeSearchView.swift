@@ -3,13 +3,13 @@ import UIKit
 import Foundation
 import ReactorKit
 import Reusable
-import Gifu
+import Lottie
 
 class HomeSearchView: UIView, NibOwnerLoadable, StoryboardView {
   
   typealias Reactor = HomeSearchViewReactor
   
-  @IBOutlet weak var logoView: GIFImageView!
+  @IBOutlet weak var logoView: LottieAnimationView!
   @IBOutlet weak var searchView: UIView!
   @IBOutlet weak var cartView: UIImageView!
   
@@ -21,16 +21,8 @@ class HomeSearchView: UIView, NibOwnerLoadable, StoryboardView {
   }
   
   func bind(reactor: Reactor) {
-    logoView.animate(withGIFNamed: "bar-logo")
+    logoView.loopMode = .loop
+    logoView.contentMode = .scaleAspectFill
+    logoView.play()
   }
-  
-//  func bind(categorys: [HomeCategorysRes.categoryRes]) {
-//    disposeBag = DisposeBag()
-//    
-//    Observable.just(categorys)
-//      .bind(to: mainView.rx.items(Reusable.cell)) {
-//        index, item, cell in
-//        cell.cellView.bind(item)
-//      }.disposed(by: disposeBag)
-//  }
 }

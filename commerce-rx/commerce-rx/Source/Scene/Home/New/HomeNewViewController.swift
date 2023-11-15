@@ -4,7 +4,7 @@ import UIKit
 import XLPagerTabStrip
 import Reusable
 
-class HomeNewViewController: UIViewController, StoryboardBased, IndicatorInfoProvider {
+class HomeNewViewController: BasePagerViewController, StoryboardBased, IndicatorInfoProvider {
   
   private let itemInfo = IndicatorInfo(title: "NEW")
   

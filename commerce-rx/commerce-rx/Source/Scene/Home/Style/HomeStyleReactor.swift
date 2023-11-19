@@ -8,7 +8,7 @@ import RealmSwift
 class HomeStyleReactor: Reactor {
   
   enum Action {
-    case refresh
+    case refresh(isViewLoading: Bool = true)
     case selectBanner(Int)
     case selectItem(Int)
     case selectRelateItem(Int)
@@ -35,13 +35,13 @@ case setStatus(ViewStatus)
   init(steps: PublishRelay<Step>?) {
     self.steps = steps
     initialState = State()
-    self.action.onNext(.refresh)
+    self.action.onNext(.refresh())
   }
 
   func mutate(action: Action) -> Observable<Mutation> {
     switch action {
-    case .refresh:
-      return .concat(.just(.setStatus(.loading)), refresh())
+    case .refresh(let isViewLoading):
+      return .concat(.just(.setStatus(isViewLoading ? .loading : .loadingScroll)), refresh())
       
     case .selectBanner(let index):
       guard let banner = currentState.banners?.data[safe: index] else { break }

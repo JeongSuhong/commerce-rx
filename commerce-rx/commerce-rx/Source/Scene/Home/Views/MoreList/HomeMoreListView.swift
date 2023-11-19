@@ -6,11 +6,13 @@ import ReactorKit
 import Reusable
 import ReusableKit
 
-class HomeMoreListView: UIView, NibOwnerLoadable {
+class HomeMoreListView: UIView, NibOwnerLoadable, StoryboardView {
   
   enum Reusable {
     static let cell = ReusableCell<BaseCollectionCell<HomeProductView>>()
   }
+  
+  typealias Reactor = HomeMoreListViewReactor
   
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var mainView: UICollectionView!
@@ -38,10 +40,8 @@ class HomeMoreListView: UIView, NibOwnerLoadable {
     mainView.snp.makeConstraints { $0.height.equalTo(250) }
   }
   
-  func bind(_ ids: [String]) {
-    disposeBag = DisposeBag()
-    
-    Observable.just(ids)
+  func bind(reactor: Reactor) {
+    reactor.state.map { $0.info }
       .bind(to: mainView.rx.items(Reusable.cell)) {
         index, item, cell in
         if cell.cellView.reactor == nil {

@@ -31,11 +31,17 @@ class HomeStyleViewController: BasePagerViewController, StoryboardBased, Storybo
     mainView.collectionViewLayout = .compositional(count: 2, height: .fractionalWidth(0.9), itemSpacing: 10, inset: .init(top: 0, leading: 16, bottom: 0, trailing: 16), headerHeight: 150)
     mainView.dataSource = self
     mainView.delegate = self
+    mainView.refreshControl = UIRefreshControl()
     
     super.viewDidLoad()
   }
   
   func bind(reactor: Reactor) {
+    mainView.refreshControl?.rx.controlEvent(.valueChanged)
+      .map { Reactor.Action.refresh(isViewLoading: false) }
+      .bind(to: reactor.action)
+      .disposed(by: disposeBag)
+    
     mainView.rx.itemSelected
       .map { Reactor.Action.selectItem($0.row) }
       .bind(to: reactor.action)
@@ -49,7 +55,10 @@ class HomeStyleViewController: BasePagerViewController, StoryboardBased, Storybo
         vc.loadingView.isHidden = status != .loading
         vc.errorView.isHidden = status != .error
         
-        if status == .none || status == .finish { vc.mainView.reloadData() }
+        if status == .none || status == .finish {
+          vc.mainView.refreshControl?.endRefreshing()
+          vc.mainView.reloadData()
+        }
       }.disposed(by: disposeBag)
 
     mainView.rx.contentOffset
@@ -92,7 +101,7 @@ extension HomeStyleViewController: UICollectionViewDelegate, UICollectionViewDat
       .bind(to: reactor.action)
       .disposed(by: view.disposeBag)
     
-    
+    // 내부에서 Bounds 값을 가져오기때문에 처음에 frame 계산이 끝난 후 호출할 것!
     Observable.combineLatest(reactor.pulse(\.$banners).compactMap{ $0 },
                              self.rx.viewWillLayoutSubviews.take(1))
     .map { $0.0 }
@@ -104,35 +113,23 @@ extension HomeStyleViewController: UICollectionViewDelegate, UICollectionViewDat
     reactor.pulse(\.$categorys)
       .compactMap { $0?.data }
       .observe(on: MainScheduler.asyncInstance)
-      .bind(with: view) { v, info in
-        v.categoryView.bind(categorys: info)
+      .bind(with: view) { [unowned self] v, info in
+        if let viewReactor = v.categoryView.reactor {
+          viewReactor.action.onNext(.setInfo(info))
+        } else {
+          v.categoryView.reactor = HomeCategoryViewReactor(info)
+          v.categoryView.setOffsetForVC(self.rx.viewDidLayoutSubviews)
+        }
       }.disposed(by: view.disposeBag)
-    
-    // FSPager 에서 VC가 전환될때 Header가 다시 그려지면서 Cell Offset은 복구되나 내부의 ScrollView Offset은 복구되지 않는 듯 함. (or 다시 그리면서 리셋되던가)
-    Observable.combineLatest(view.categoryView.mainView.rx.contentOffset.distinctUntilChanged().throttle(.milliseconds(50), scheduler: MainScheduler.asyncInstance),
-                             self.rx.viewWillAppear)
-    .map { $0.0 }
-    .observe(on: MainScheduler.asyncInstance)
-    .bind(with: view) { v, offset in
-      guard let mainView = v.categoryView.mainView,
-            let pageView = v.categoryView.pageView,
-            let tintView = v.categoryView.pageTintView else { return }
-      
-      var ratio = mainView.visibleSize.width / mainView.contentSize.width
-      ratio = ratio > 0.8 ? 0.8 : (ratio < 0.3 ? 0.3 : ratio)
-      
-      tintView.snp.remakeConstraints { $0.width.equalTo(pageView.bounds.width * ratio) }
-      
-      let offsetRatio = offset.x / (mainView.contentSize.width - mainView.visibleSize.width)
-      let pageOffset = (pageView.contentSize.width - pageView.visibleSize.width) * offsetRatio
-
-      pageView.setContentOffset(.init(x: pageOffset, y: pageView.contentOffset.y), animated: false)
-    }.disposed(by: view.disposeBag)
     
     reactor.pulse(\.$relateProducts)
       .observe(on: MainScheduler.asyncInstance)
       .bind(with: view) { v, info in
-        v.relateView.bind(info)
+        if let viewReactor = v.relateView.reactor {
+          viewReactor.action.onNext(.setInfo(info))
+        } else {
+          v.relateView.reactor = HomeMoreListViewReactor(info)
+        }
       }.disposed(by: view.disposeBag)
   }
   

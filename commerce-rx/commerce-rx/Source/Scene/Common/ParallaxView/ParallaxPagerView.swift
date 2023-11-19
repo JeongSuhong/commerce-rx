@@ -28,6 +28,7 @@ class ParallaxPagerView: UIView, NibOwnerLoadable {
     super.init(coder: aDecoder)
     self.loadNibContent()
     
+    // FSPagerView 가 ReusableKit을 지원하지 않는다.
     mainView.register(ParallaxView.self, forCellWithReuseIdentifier: "cell")
     mainView.dataSource = self
     mainView.delegate = self
@@ -36,9 +37,6 @@ class ParallaxPagerView: UIView, NibOwnerLoadable {
   }
   
   func bind(_ infos: [ParallaxView.Model]) {
-    // Bounds 값을 가져오기때문에 frame 계산이 끝난 후 호출할 것!
-    disposeBag = DisposeBag()
-    
     self.infos = infos
     mainView.reloadData()
   }

@@ -34,7 +34,5 @@ class HomeStyleHeaderView: UIView, NibOwnerLoadable {
   private func bind() {
     relateView.titleLabel.text = "내가 본 상품의 연관 상품"
     titleLabel.text = "\("-")님을 위한 추천 상품"
-    
-    
   }
 }

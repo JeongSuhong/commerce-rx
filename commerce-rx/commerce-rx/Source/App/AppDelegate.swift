@@ -20,11 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window.makeKeyAndVisible()
     self.window = window
     
+    preprocessing()
+    
+    debugPrint("*** realm 위치: ", Realm.Configuration.defaultConfiguration.fileURL!)
+    
     registerForRemoteNotifications()
     BonMotManagr.setupStyles()
     setupFlow()
-
-    debugPrint("*** realm 위치: ", Realm.Configuration.defaultConfiguration.fileURL!)
     
     return true
   }
@@ -39,7 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 }
 
-// MARK: - Managers
 extension AppDelegate {
   private func setupFlow() {
     guard let window = self.window else { return }
@@ -49,6 +50,12 @@ extension AppDelegate {
     Flows.use(appFlow, when: .created) { root in
         window.rootViewController = root
         window.makeKeyAndVisible()
+    }
+  }
+  
+  private func preprocessing() {
+    if #available(iOS 15.0, *) {
+      UITableView.appearance().sectionHeaderTopPadding = 0
     }
   }
 }

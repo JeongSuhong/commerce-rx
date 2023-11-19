@@ -74,9 +74,12 @@ class HomeViewController: ButtonBarPagerTabStripViewController, StoryboardView, 
 
     let newVC = HomeNewViewController.instantiate()
     
+    // Child VC에서 위 or 아래 스크롤시 상단 Nav Bar 액션
     Observable.from([styleVC, newVC])
       .flatMap { $0.isDownScroll }
       .distinctUntilChanged()
+      .throttle(.seconds(1), latest: true, scheduler: MainScheduler.asyncInstance)
+      .observe(on: MainScheduler.asyncInstance)
       .bind(with: self) { vc, isDown in
         vc.containerTopConst.constant = isDown ? -vc.searchViewHeight : 0
         

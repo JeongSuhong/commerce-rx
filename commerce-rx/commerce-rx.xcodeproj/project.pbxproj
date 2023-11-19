@@ -64,6 +64,8 @@
 		C4A0C9672AB1BB2E00F46AD1 /* HomeReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0C9662AB1BB2E00F46AD1 /* HomeReactor.swift */; };
 		C4A3CC172B036C5200FBAAAD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C4A3CC162B036C5200FBAAAD /* Lottie */; };
 		C4A3CC1A2B037E4600FBAAAD /* BasePagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3CC192B037E4600FBAAAD /* BasePagerViewController.swift */; };
+		C4A3CC3E2B05BC0200FBAAAD /* HomeCategoryViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3CC3B2B05BC0200FBAAAD /* HomeCategoryViewReactor.swift */; };
+		C4A3CC412B05C24300FBAAAD /* HomeMoreListViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3CC402B05C24300FBAAAD /* HomeMoreListViewReactor.swift */; };
 		C4A4E0372AA996420046F60C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4E0362AA996420046F60C /* AppDelegate.swift */; };
 		C4A4E03B2AA996420046F60C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4E03A2AA996420046F60C /* HomeViewController.swift */; };
 		C4A4E0402AA996430046F60C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A4E03F2AA996430046F60C /* Assets.xcassets */; };
@@ -173,6 +175,8 @@
 		C4A0C9602AB1B89800F46AD1 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		C4A0C9662AB1BB2E00F46AD1 /* HomeReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReactor.swift; sourceTree = "<group>"; };
 		C4A3CC192B037E4600FBAAAD /* BasePagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePagerViewController.swift; sourceTree = "<group>"; };
+		C4A3CC3B2B05BC0200FBAAAD /* HomeCategoryViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryViewReactor.swift; sourceTree = "<group>"; };
+		C4A3CC402B05C24300FBAAAD /* HomeMoreListViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMoreListViewReactor.swift; sourceTree = "<group>"; };
 		C4A4E0332AA996420046F60C /* commerce-rx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "commerce-rx.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A4E0362AA996420046F60C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4A4E03A2AA996420046F60C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 				C4B353B62AC2C94000921ADC /* HomeCategoryItem.swift */,
 				C41851682AC4165C004ADF84 /* HomeCategoryView.xib */,
 				C41851662AC4165C004ADF84 /* HomeCategoryView.swift */,
+				C4A3CC3B2B05BC0200FBAAAD /* HomeCategoryViewReactor.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 			children = (
 				C460AE2C2ACD69ED008D22A4 /* HomeMoreListView.xib */,
 				C460AE2A2ACD69ED008D22A4 /* HomeMoreListView.swift */,
+				C4A3CC402B05C24300FBAAAD /* HomeMoreListViewReactor.swift */,
 			);
 			path = MoreList;
 			sourceTree = "<group>";
@@ -339,7 +345,7 @@
 		C462B7EA2ADE774300FCD1C7 /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
-				C4AD96D82AE7C33100215675 /* Views */,
+				C4AD96D82AE7C33100215675 /* Childs */,
 				C4AD96D92AE7C35D00215675 /* ProductDetailViewController.storyboard */,
 				C4AD96DA2AE7C35D00215675 /* ProductDetailViewController.swift */,
 				C4AD96DB2AE7C35D00215675 /* ProductDetailReactor.swift */,
@@ -373,13 +379,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		C49927D32ABA8A270007C299 /* Views */ = {
+		C49927D32ABA8A270007C299 /* Childs */ = {
 			isa = PBXGroup;
 			children = (
 				C49927D42ABA8A350007C299 /* HomeStyleHeaderView.xib */,
 				C49927D62ABA8A3C0007C299 /* HomeStyleHeaderView.swift */,
 			);
-			path = Views;
+			path = Childs;
 			sourceTree = "<group>";
 		};
 		C49927D82ABA8B5A0007C299 /* Common */ = {
@@ -535,7 +541,7 @@
 		C4A4E0992AA9B6860046F60C /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				C4A4E0A02AA9B8460046F60C /* Views */,
+				C4A4E0A02AA9B8460046F60C /* Childs */,
 				C4A0C9602AB1B89800F46AD1 /* HomeViewController.storyboard */,
 				C4A4E03A2AA996420046F60C /* HomeViewController.swift */,
 				C4A0C9662AB1BB2E00F46AD1 /* HomeReactor.swift */,
@@ -546,7 +552,7 @@
 		C4A4E09A2AA9B6900046F60C /* Style */ = {
 			isa = PBXGroup;
 			children = (
-				C49927D32ABA8A270007C299 /* Views */,
+				C49927D32ABA8A270007C299 /* Childs */,
 				C4A6C6602AB99CD100016AFB /* HomeStyleViewController.storyboard */,
 				C42143E22AA9C97E0094230D /* HomeStyleViewController.swift */,
 				C4A6C6652AB9A26800016AFB /* HomeStyleReactor.swift */,
@@ -563,14 +569,14 @@
 			path = New;
 			sourceTree = "<group>";
 		};
-		C4A4E0A02AA9B8460046F60C /* Views */ = {
+		C4A4E0A02AA9B8460046F60C /* Childs */ = {
 			isa = PBXGroup;
 			children = (
 				C4A6C64B2AB97C5200016AFB /* HomeSearchView.xib */,
 				C4A6C64D2AB97C5C00016AFB /* HomeSearchView.swift */,
 				C4A6C64F2AB97C6300016AFB /* HomeSearchViewReactor.swift */,
 			);
-			path = Views;
+			path = Childs;
 			sourceTree = "<group>";
 		};
 		C4A7F4622AE9243D00F985AD /* StickyPagerView */ = {
@@ -584,14 +590,14 @@
 			path = StickyPagerView;
 			sourceTree = "<group>";
 		};
-		C4AD96D82AE7C33100215675 /* Views */ = {
+		C4AD96D82AE7C33100215675 /* Childs */ = {
 			isa = PBXGroup;
 			children = (
 				C4AD96E12AE7C37B00215675 /* ProductDetailNavView.xib */,
 				C4AD96DF2AE7C37B00215675 /* ProductDetailNavView.swift */,
 				C4AD96E02AE7C37B00215675 /* ProductDetailNavViewReactor.swift */,
 			);
-			path = Views;
+			path = Childs;
 			sourceTree = "<group>";
 		};
 		C4B353B52AC2C90F00921ADC /* Views */ = {
@@ -773,9 +779,11 @@
 				C4A6C64E2AB97C5C00016AFB /* HomeSearchView.swift in Sources */,
 				C42143E82AA9CE520094230D /* NSObject+Extensions.swift in Sources */,
 				C4D30B7A2AFB53030041B0CF /* StickyPagerStackView.swift in Sources */,
+				C4A3CC3E2B05BC0200FBAAAD /* HomeCategoryViewReactor.swift in Sources */,
 				C4A6C6682AB9A53F00016AFB /* BaseCollectionCell.swift in Sources */,
 				C4761DBE2AF0AEF400E3529F /* UIViewController+Extensions.swift in Sources */,
 				C49927E12ABAA42A0007C299 /* Collection+Exnteions.swift in Sources */,
+				C4A3CC412B05C24300FBAAAD /* HomeMoreListViewReactor.swift in Sources */,
 				C4A7F45B2AE91CB200F985AD /* UIColor+Extensions.swift in Sources */,
 				C4A4E0372AA996420046F60C /* AppDelegate.swift in Sources */,
 				C4DA5B582AB043920000DCA5 /* BonMotManager.swift in Sources */,

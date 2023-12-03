@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xRt-Db-MZv">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1375"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="475"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dha-KQ-jc1" customClass="StickyPagerStackView" customModule="commerce_rx" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
@@ -30,12 +30,9 @@
                                                     <constraint firstAttribute="width" secondItem="Dha-KQ-jc1" secondAttribute="height" multiplier="1:1" id="5Bk-i4-9TJ"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6V-CA-gVL">
-                                                <rect key="frame" x="0.0" y="375" width="375" height="1000"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1000" id="lUy-tX-9d8"/>
-                                                </constraints>
+                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="h8t-J9-b4K" customClass="ProductDetailInfosView" customModule="commerce_rx" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="375" width="375" height="100"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -70,6 +67,7 @@
                     <connections>
                         <outlet property="imagesConst" destination="5Bk-i4-9TJ" id="SgG-Jd-RVf"/>
                         <outlet property="imagesView" destination="Dha-KQ-jc1" id="X3U-F9-rNi"/>
+                        <outlet property="infoView" destination="h8t-J9-b4K" id="D1O-bU-OgL"/>
                         <outlet property="mainView" destination="Q0c-eH-I5W" id="SuH-Ud-gKg"/>
                         <outlet property="navView" destination="y2m-ze-fnI" id="utS-Zc-9SY"/>
                     </connections>

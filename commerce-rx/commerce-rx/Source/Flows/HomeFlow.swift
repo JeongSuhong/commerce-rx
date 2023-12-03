@@ -49,7 +49,7 @@ final class HomeFlow: Flow {
     case .productDetail(let id):
       let flow = ProductFlow(self.navigationController)
       Flows.use(flow, when: .created, block: { _ in })
-      return .one(flowContributor: .contribute(withNextPresentable: flow, withNextStepper: OneStepper(withSingleStep: ProductStep.main(id: id))))
+      return .one(flowContributor: .contribute(withNextPresentable: flow, withNextStepper: OneStepper(withSingleStep: ProductStep.detail(id: id))))
     }
   }
 }

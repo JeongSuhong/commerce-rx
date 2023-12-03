@@ -1,14 +1,13 @@
 
-
 import Foundation
 import ReactorKit
 import RxFlow
 import RxRelay
 
-class ProductDetailNavViewReactor: Reactor {
+class ProductDetailInfosViewReactor: Reactor {
   
   enum Action {
-
+    
   }
   
   enum Mutation {
@@ -16,19 +15,21 @@ class ProductDetailNavViewReactor: Reactor {
   }
   
   struct State {
-
+    let model: ProductModel
+    let info: ProductDetailRes
   }
 
   
   let initialState: State
+  private let steps: PublishRelay<Step>
 
-  init() {
-    initialState = State()
+  init(_ info: ProductDetailRes, model: ProductModel, steps: PublishRelay<Step>) {
+    self.steps = steps
+    initialState = State(model: model, info: info)
   }
 
   func mutate(action: Action) -> Observable<Mutation> {
     switch action {
-
     default: break
     }
     
@@ -38,7 +39,6 @@ class ProductDetailNavViewReactor: Reactor {
   func reduce(state: State, mutation: Mutation) -> State {
     var newState = state
     switch mutation {
-
     default: break
     }
     return newState

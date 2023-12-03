@@ -14,11 +14,13 @@ class ProductDetailReactor: Reactor, Stepper {
   }
   
   enum Mutation {
+    case setStatus(ViewStatus)
     case setInfo(ProductDetailRes)
   case setModel(ProductModel)
   }
   
   struct State {
+    var status: ViewStatus = .loading
     @Pulse var model: ProductModel?
     @Pulse var info: ProductDetailRes?
   }
@@ -56,7 +58,7 @@ class ProductDetailReactor: Reactor, Stepper {
   func mutate(action: Action) -> Observable<Mutation> {
     switch action {
     case .refresh:
-      return refresh()
+      return .concat(.just(.setStatus(.loading)), refresh())
       
     case .setModel(let model):
       return .just(.setModel(model))
@@ -69,6 +71,8 @@ class ProductDetailReactor: Reactor, Stepper {
   func reduce(state: State, mutation: Mutation) -> State {
     var newState = state
     switch mutation {
+    case .setStatus(let value):
+      newState.status = value
     case .setInfo(let value):
       newState.info = value
     case .setModel(let value):
@@ -98,7 +102,8 @@ extension ProductDetailReactor {
     
     return observ
       .flatMap { res -> Observable<Mutation> in
-        return .just(.setInfo(res))
+        return .concat(.just(.setInfo(res)),
+                       .just(.setStatus(.none)))
       }
   }
 }

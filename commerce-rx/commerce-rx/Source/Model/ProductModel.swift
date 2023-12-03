@@ -16,6 +16,7 @@ class ProductModel: Object {
   @Persisted var createdAt: Date?
   @Persisted var brandName: String
   @Persisted var brandId: String
+  @Persisted var brandImage: String?
   @Persisted var mainImage: String
   @Persisted var benefit: ProductBenefitModel?
   @Persisted var category = List<ProductCategoryModel>()
@@ -52,6 +53,7 @@ class ProductModel: Object {
     self.createdAt = res.createdAt.asDate()
     self.brandName = res.brandName
     self.brandId = res.brandId
+    self.brandImage = res.brandImage
     self.mainImage = res.representativeImage
 
     if let originBenefit = res.benefit {

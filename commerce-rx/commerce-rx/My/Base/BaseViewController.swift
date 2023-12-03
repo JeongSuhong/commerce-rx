@@ -31,4 +31,9 @@ class BaseViewController: UIViewController {
       return view
     }
   }()
+  
+  override func viewDidLoad() {
+    loadingView.isHidden = false
+    super.viewDidLoad()
+  }
 }

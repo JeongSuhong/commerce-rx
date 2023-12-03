@@ -107,6 +107,7 @@ struct ProductDetailRes: Codable {
   let createdAt: String
   let brandName: String
   let brandId: String
+  let brandImage: String
   let representativeImage: String
   let images: [ProductImageRes]
   let benefit: productBenefitRes?

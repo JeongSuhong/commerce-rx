@@ -7,7 +7,7 @@ import Reusable
 // MARK: - Step
 
 enum ProductStep: Step {
-  case main(id: String)
+  case detail(id: String)
 }
 
 // MARK: - Flow
@@ -27,10 +27,11 @@ final class ProductFlow: Flow {
   func navigate(to step: Step) -> FlowContributors {
     guard let step = step as? ProductStep else { return .none }
     switch step {
-    case .main(let id):
+    case .detail(let id):
       let vc = ProductDetailViewController.instantiate()
       let reactor = ProductDetailReactor(id: id)
       vc.reactor = reactor
+      vc.hidesBottomBarWhenPushed = true
       self.navigationController.pushViewController(vc, animated: true)
       return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: reactor))
     }

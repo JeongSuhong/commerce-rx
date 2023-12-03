@@ -19,7 +19,7 @@ class BonMotManagr {
       NamedStyles.shared.registerStyle(forName: "nanumL_\(Int(size))", style: lightStyle)
       
       let ultraLightStyle = StringStyle(.font(.nanumGothicUltraLight(size: size)))
-      NamedStyles.shared.registerStyle(forName: "nanumUL_\(Int(size))", style: lightStyle)
+      NamedStyles.shared.registerStyle(forName: "nanumUL_\(Int(size))", style: ultraLightStyle)
     }
   }
 }

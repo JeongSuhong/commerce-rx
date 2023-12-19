@@ -115,11 +115,14 @@
 		C4B353B92AC2C94000921ADC /* HomeCategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B353B62AC2C94000921ADC /* HomeCategoryItem.swift */; };
 		C4B353BB2AC2C94000921ADC /* HomeCategoryItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4B353B82AC2C94000921ADC /* HomeCategoryItem.xib */; };
 		C4B353BD2AC2CB0000921ADC /* BaseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B353BC2AC2CB0000921ADC /* BaseImageView.swift */; };
-		C4D30B7A2AFB53030041B0CF /* StickyPagerStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D30B772AFB53030041B0CF /* StickyPagerStackView.swift */; };
-		C4D30B7C2AFB53030041B0CF /* StickyPagerStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4D30B792AFB53030041B0CF /* StickyPagerStackView.xib */; };
+		C4D30B7A2AFB53030041B0CF /* StickyPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D30B772AFB53030041B0CF /* StickyPagerView.swift */; };
+		C4D30B7C2AFB53030041B0CF /* StickyPagerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4D30B792AFB53030041B0CF /* StickyPagerView.xib */; };
 		C4D30B862AFB62E30041B0CF /* StickyPagerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D30B832AFB62E30041B0CF /* StickyPagerImageView.swift */; };
 		C4D30B882AFB62E30041B0CF /* StickyPagerImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4D30B852AFB62E30041B0CF /* StickyPagerImageView.xib */; };
 		C4DA5B582AB043920000DCA5 /* BonMotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA5B572AB043920000DCA5 /* BonMotManager.swift */; };
+		C4E9ADF92B2A89B800804413 /* UITableView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E9ADF82B2A89B800804413 /* UITableView+Rx.swift */; };
+		C4E9AE042B2A910500804413 /* ProductDetailSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E9AE012B2A910500804413 /* ProductDetailSectionView.swift */; };
+		C4E9AE062B2A910500804413 /* ProductDetailSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4E9AE032B2A910500804413 /* ProductDetailSectionView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -211,11 +214,14 @@
 		C4B353B62AC2C94000921ADC /* HomeCategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryItem.swift; sourceTree = "<group>"; };
 		C4B353B82AC2C94000921ADC /* HomeCategoryItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCategoryItem.xib; sourceTree = "<group>"; };
 		C4B353BC2AC2CB0000921ADC /* BaseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseImageView.swift; sourceTree = "<group>"; };
-		C4D30B772AFB53030041B0CF /* StickyPagerStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyPagerStackView.swift; sourceTree = "<group>"; };
-		C4D30B792AFB53030041B0CF /* StickyPagerStackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StickyPagerStackView.xib; sourceTree = "<group>"; };
+		C4D30B772AFB53030041B0CF /* StickyPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyPagerView.swift; sourceTree = "<group>"; };
+		C4D30B792AFB53030041B0CF /* StickyPagerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StickyPagerView.xib; sourceTree = "<group>"; };
 		C4D30B832AFB62E30041B0CF /* StickyPagerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyPagerImageView.swift; sourceTree = "<group>"; };
 		C4D30B852AFB62E30041B0CF /* StickyPagerImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StickyPagerImageView.xib; sourceTree = "<group>"; };
 		C4DA5B572AB043920000DCA5 /* BonMotManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonMotManager.swift; sourceTree = "<group>"; };
+		C4E9ADF82B2A89B800804413 /* UITableView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Rx.swift"; sourceTree = "<group>"; };
+		C4E9AE012B2A910500804413 /* ProductDetailSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailSectionView.swift; sourceTree = "<group>"; };
+		C4E9AE032B2A910500804413 /* ProductDetailSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailSectionView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +310,7 @@
 				C4761DBD2AF0AEF400E3529F /* UIViewController+Extensions.swift */,
 				C4761DBF2AF0B04F00E3529F /* UIApplication+Extensions.swift */,
 				C48846392B16D40800E50166 /* NSLayoutConstraint+Extensions.swift */,
+				C4E9ADF82B2A89B800804413 /* UITableView+Rx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -363,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				C4AD96D82AE7C33100215675 /* Childs */,
+				C4E9ADFA2B2A90DE00804413 /* Views */,
 				C4AD96D92AE7C35D00215675 /* ProductDetailViewController.storyboard */,
 				C4AD96DA2AE7C35D00215675 /* ProductDetailViewController.swift */,
 				C4AD96DB2AE7C35D00215675 /* ProductDetailReactor.swift */,
@@ -599,8 +607,8 @@
 		C4A7F4622AE9243D00F985AD /* StickyPagerView */ = {
 			isa = PBXGroup;
 			children = (
-				C4D30B792AFB53030041B0CF /* StickyPagerStackView.xib */,
-				C4D30B772AFB53030041B0CF /* StickyPagerStackView.swift */,
+				C4D30B792AFB53030041B0CF /* StickyPagerView.xib */,
+				C4D30B772AFB53030041B0CF /* StickyPagerView.swift */,
 				C4D30B852AFB62E30041B0CF /* StickyPagerImageView.xib */,
 				C4D30B832AFB62E30041B0CF /* StickyPagerImageView.swift */,
 			);
@@ -636,6 +644,15 @@
 				C4DA5B572AB043920000DCA5 /* BonMotManager.swift */,
 			);
 			path = Mangers;
+			sourceTree = "<group>";
+		};
+		C4E9ADFA2B2A90DE00804413 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4E9AE032B2A910500804413 /* ProductDetailSectionView.xib */,
+				C4E9AE012B2A910500804413 /* ProductDetailSectionView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -745,11 +762,12 @@
 				C4A0C9642AB1BA5D00F46AD1 /* NanumBarunGothicUltraLight.ttf in Resources */,
 				C418516B2AC4165C004ADF84 /* HomeCategoryView.xib in Resources */,
 				C4A6C6612AB99CD100016AFB /* HomeStyleViewController.storyboard in Resources */,
-				C4D30B7C2AFB53030041B0CF /* StickyPagerStackView.xib in Resources */,
+				C4D30B7C2AFB53030041B0CF /* StickyPagerView.xib in Resources */,
 				C4A0C9652AB1BA5D00F46AD1 /* NanumBarunGothicBold.ttf in Resources */,
 				C460AE2F2ACD69ED008D22A4 /* HomeMoreListView.xib in Resources */,
 				C48918782AD5461B00D7EB30 /* HomeProductView.xib in Resources */,
 				C4A6C64C2AB97C5200016AFB /* HomeSearchView.xib in Resources */,
+				C4E9AE062B2A910500804413 /* ProductDetailSectionView.xib in Resources */,
 				C4A0C9612AB1B89800F46AD1 /* HomeViewController.storyboard in Resources */,
 				C4B353BB2AC2C94000921ADC /* HomeCategoryItem.xib in Resources */,
 				C49D7A692ABD73A5000F4CB8 /* CommonErrorView.xib in Resources */,
@@ -802,7 +820,7 @@
 				C4A6C64E2AB97C5C00016AFB /* HomeSearchView.swift in Sources */,
 				C488463C2B16D88900E50166 /* ProductDetailInfosViewReactor.swift in Sources */,
 				C42143E82AA9CE520094230D /* NSObject+Extensions.swift in Sources */,
-				C4D30B7A2AFB53030041B0CF /* StickyPagerStackView.swift in Sources */,
+				C4D30B7A2AFB53030041B0CF /* StickyPagerView.swift in Sources */,
 				C4A3CC3E2B05BC0200FBAAAD /* HomeCategoryViewReactor.swift in Sources */,
 				C4A6C6682AB9A53F00016AFB /* BaseCollectionCell.swift in Sources */,
 				C4761DBE2AF0AEF400E3529F /* UIViewController+Extensions.swift in Sources */,
@@ -820,12 +838,14 @@
 				C4A6C65F2AB98A1100016AFB /* UIView+Extensions.swift in Sources */,
 				C460AE262ACD4B27008D22A4 /* UIScrollView+Extensions.swift in Sources */,
 				C49927DF2ABAA2D90007C299 /* UIImageView+Extensions.swift in Sources */,
+				C4E9ADF92B2A89B800804413 /* UITableView+Rx.swift in Sources */,
 				C48918772AD5461B00D7EB30 /* HomeProductViewReactor.swift in Sources */,
 				C4761DBC2AF09CC200E3529F /* BasePagerViewCell.swift in Sources */,
 				C4A0C9672AB1BB2E00F46AD1 /* HomeReactor.swift in Sources */,
 				C49D7A552ABAF4E7000F4CB8 /* HomeApi.swift in Sources */,
 				C49D7A4C2ABADAB5000F4CB8 /* ParallaxView.swift in Sources */,
 				C4AD96DD2AE7C35D00215675 /* ProductDetailViewController.swift in Sources */,
+				C4E9AE042B2A910500804413 /* ProductDetailSectionView.swift in Sources */,
 				C4AD96602AE662AC00215675 /* Observable+Extensions.swift in Sources */,
 				C4A6C6662AB9A26800016AFB /* HomeStyleReactor.swift in Sources */,
 				C49D7A502ABADD95000F4CB8 /* ParallaxPagerView.swift in Sources */,

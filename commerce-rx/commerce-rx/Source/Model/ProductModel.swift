@@ -22,6 +22,17 @@ class ProductModel: Object {
   @Persisted var category = List<ProductCategoryModel>()
   @Persisted var isLike: Bool
   
+  var benefitPrice: Int {
+    switch benefit?.type {
+    case .coupon:
+      return price - Int(Double(price) * Double(benefit!.amount) / 100.0)
+    case .creditcard:
+      var price = price - benefit!.amount
+      return price < 0 ? 0 : price
+    default: return 0
+    }
+  }
+  
   convenience init(_ res: ProductListRes.productRes) {
     self.init()
     self.id = res.id

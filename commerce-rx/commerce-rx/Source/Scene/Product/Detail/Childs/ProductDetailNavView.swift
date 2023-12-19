@@ -23,7 +23,15 @@ class ProductDetailNavView: UIView, NibOwnerLoadable, StoryboardView {
     self.loadNibContent()
   }
   
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    
+    bgView.alpha = 0
+    setScrollPercent(0)
+  }
+  
   func bind(reactor: Reactor) {
+    
 
   }
   

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nEA-LV-Ppx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nEA-LV-Ppx">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,36 +17,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0c-eH-I5W">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YLi-Rh-Zs5">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xRt-Db-MZv">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="475"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dha-KQ-jc1" customClass="StickyPagerStackView" customModule="commerce_rx" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Dha-KQ-jc1" secondAttribute="height" multiplier="1:1" id="5Bk-i4-9TJ"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="h8t-J9-b4K" customClass="ProductDetailInfosView" customModule="commerce_rx" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="375" width="375" height="100"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="xRt-Db-MZv" firstAttribute="leading" secondItem="YLX-rq-t6T" secondAttribute="leading" id="FlU-hm-AjF"/>
-                                    <constraint firstItem="xRt-Db-MZv" firstAttribute="bottom" secondItem="YLX-rq-t6T" secondAttribute="bottom" id="Rk7-SW-wr7"/>
-                                    <constraint firstItem="xRt-Db-MZv" firstAttribute="width" secondItem="v0P-UO-QWn" secondAttribute="width" id="iaf-wq-Hhg"/>
-                                    <constraint firstItem="xRt-Db-MZv" firstAttribute="trailing" secondItem="YLX-rq-t6T" secondAttribute="trailing" id="rYv-Xj-Sxj"/>
-                                    <constraint firstItem="xRt-Db-MZv" firstAttribute="top" secondItem="YLX-rq-t6T" secondAttribute="top" id="sWp-7y-7JO"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="YLX-rq-t6T"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="v0P-UO-QWn"/>
-                            </scrollView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="0md-JQ-TcI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="425"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ywl-41-9qA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="425"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMG-2Y-dFB" customClass="StickyPagerView" customModule="commerce_rx" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="Vk2-vD-vgi" customClass="ProductDetailInfosView" customModule="commerce_rx" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="375" width="375" height="50"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="ywl-41-9qA" firstAttribute="top" secondItem="0md-JQ-TcI" secondAttribute="top" id="0oe-R0-b7r"/>
+                                        <constraint firstItem="ywl-41-9qA" firstAttribute="leading" secondItem="0md-JQ-TcI" secondAttribute="leading" id="4O9-YD-MAc"/>
+                                        <constraint firstAttribute="trailing" secondItem="ywl-41-9qA" secondAttribute="trailing" id="L8I-Jr-Cfh"/>
+                                        <constraint firstItem="EMG-2Y-dFB" firstAttribute="height" secondItem="ywl-41-9qA" secondAttribute="width" id="idb-uB-DUh"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GUP-t4-qcE">
+                                        <rect key="frame" x="0.0" y="475" width="375" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GUP-t4-qcE" id="CtT-ks-tsb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="y2m-ze-fnI" userLabel="Top Nav View" customClass="ProductDetailNavView" customModule="commerce_rx" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,20 +65,20 @@
                         <viewLayoutGuide key="safeArea" id="zYe-d3-fSA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Q0c-eH-I5W" firstAttribute="leading" secondItem="zYe-d3-fSA" secondAttribute="leading" id="48s-Cj-AmX"/>
-                            <constraint firstItem="Q0c-eH-I5W" firstAttribute="top" secondItem="eqC-OF-qz9" secondAttribute="top" id="ETb-Vr-TS7"/>
+                            <constraint firstItem="YLi-Rh-Zs5" firstAttribute="top" secondItem="eqC-OF-qz9" secondAttribute="top" id="6rG-Wv-s7e"/>
+                            <constraint firstItem="zYe-d3-fSA" firstAttribute="trailing" secondItem="YLi-Rh-Zs5" secondAttribute="trailing" id="CjZ-B5-req"/>
+                            <constraint firstItem="zYe-d3-fSA" firstAttribute="bottom" secondItem="YLi-Rh-Zs5" secondAttribute="bottom" id="QA4-LV-8y0"/>
                             <constraint firstItem="zYe-d3-fSA" firstAttribute="trailing" secondItem="y2m-ze-fnI" secondAttribute="trailing" id="WBj-8n-hpa"/>
                             <constraint firstItem="y2m-ze-fnI" firstAttribute="top" secondItem="eqC-OF-qz9" secondAttribute="top" id="b8x-1X-7Kr"/>
-                            <constraint firstItem="zYe-d3-fSA" firstAttribute="trailing" secondItem="Q0c-eH-I5W" secondAttribute="trailing" id="sKQ-db-k4D"/>
-                            <constraint firstItem="zYe-d3-fSA" firstAttribute="bottom" secondItem="Q0c-eH-I5W" secondAttribute="bottom" id="vuW-4r-ufA"/>
+                            <constraint firstItem="YLi-Rh-Zs5" firstAttribute="leading" secondItem="zYe-d3-fSA" secondAttribute="leading" id="mqT-hZ-0Xw"/>
                             <constraint firstItem="y2m-ze-fnI" firstAttribute="leading" secondItem="zYe-d3-fSA" secondAttribute="leading" id="yLl-Q2-kLa"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imagesConst" destination="5Bk-i4-9TJ" id="SgG-Jd-RVf"/>
-                        <outlet property="imagesView" destination="Dha-KQ-jc1" id="X3U-F9-rNi"/>
-                        <outlet property="infoView" destination="h8t-J9-b4K" id="D1O-bU-OgL"/>
-                        <outlet property="mainView" destination="Q0c-eH-I5W" id="SuH-Ud-gKg"/>
+                        <outlet property="headerView" destination="ywl-41-9qA" id="vC0-tt-agD"/>
+                        <outlet property="imagesView" destination="EMG-2Y-dFB" id="pfQ-lI-Is1"/>
+                        <outlet property="infoView" destination="Vk2-vD-vgi" id="h3I-C7-fTi"/>
+                        <outlet property="mainView" destination="YLi-Rh-Zs5" id="Jxq-S7-Z4Z"/>
                         <outlet property="navView" destination="y2m-ze-fnI" id="utS-Zc-9SY"/>
                     </connections>
                 </viewController>

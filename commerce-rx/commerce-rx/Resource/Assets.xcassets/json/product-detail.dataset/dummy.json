@@ -1,8 +1,8 @@
 {
     "id": "100000",
     "name": "홈 상품 테스트",
-    "price": 3000,
-    "originPrice": 154000,
+    "price": 30000,
+    "originPrice": 1540000,
     "createdAt": "2023-07-13T05:24:39.276Z",
     "brandName": "0번브랜드",
     "brandId": "0",

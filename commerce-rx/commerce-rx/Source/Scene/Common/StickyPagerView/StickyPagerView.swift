@@ -6,7 +6,7 @@ import ReactorKit
 import Reusable
 import FSPagerView
 
-class StickyPagerStackView: UIView, NibOwnerLoadable {
+class StickyPagerView: UIView, NibOwnerLoadable {
   
   @IBOutlet weak var mainView: UIStackView!
   @IBOutlet weak var scrollView: UIScrollView!
@@ -26,6 +26,11 @@ class StickyPagerStackView: UIView, NibOwnerLoadable {
     
   }
   
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    self.loadNibContent()
+  }
+  
   override func awakeFromNib() {
     super.awakeFromNib()
     
@@ -35,6 +40,8 @@ class StickyPagerStackView: UIView, NibOwnerLoadable {
     controlView.setFillColor(.white, for: .selected)
     controlView.itemSpacing = 4
     controlView.interitemSpacing = 2
+    
+    scrollOffsetAction.onNext(.zero)
   }
   
   

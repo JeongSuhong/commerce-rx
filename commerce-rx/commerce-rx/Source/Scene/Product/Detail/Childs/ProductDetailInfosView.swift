@@ -29,13 +29,16 @@ class ProductDetailInfosView: UIView, NibOwnerLoadable, StoryboardView {
   @IBOutlet weak var originPriceLabel: UILabel!
   @IBOutlet weak var priceLabel: UILabel!
   
+  @IBOutlet weak var benefitPriceView: UIView!
+  @IBOutlet weak var benefitPriceLabel: UILabel!
+  @IBOutlet weak var couponView: UIView!
+  
   
   var disposeBag = DisposeBag()
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     self.loadNibContent()
-    
   }
   
   override func awakeFromNib() {
@@ -67,6 +70,18 @@ class ProductDetailInfosView: UIView, NibOwnerLoadable, StoryboardView {
     
     ratingConst = ratingConst.setMultiplier(multiplier: info.reviewRating / 5.0)
     ratingLabel.text = "(\(info.reviewCount.formatted()))"
+    
+    benefitPriceView.isHidden = model.benefit == nil
+    couponView.isHidden = model.benefit?.type != .coupon
+    
+    if let benefit = model.benefit {
+      switch benefit.type {
+      case .coupon:
+        benefitPriceLabel.attributedText = "\(model.benefitPrice.formatted())원 <t>쿠폰 적용됨</t>".styled(with: getBenefitStyle())
+      case .creditcard:
+        benefitPriceLabel.attributedText = "\(model.benefitPrice.formatted())원 <t>할인 적용됨</t>".styled(with: getBenefitStyle())
+      }
+    }
   }
   
   private func getStyle() -> BonMot.StringStyle {
@@ -75,6 +90,18 @@ class ProductDetailInfosView: UIView, NibOwnerLoadable, StoryboardView {
       .color(.init(resource: .coAEAEB2)),
       .xmlRules([
         .style("s", StringStyle(.strikethrough(.single, .init(resource: .coAEAEB2))))
+      ])
+    )
+  }
+  
+  private func getBenefitStyle() -> BonMot.StringStyle {
+    let titleStyle = StringStyle(.font(.nanumGothic(size: 12)))
+    
+    return StringStyle(
+      .font(.nanumGothic(size: 18)),
+      .color(.init(resource: .coF64444)),
+      .xmlRules([
+        .style("t", titleStyle)
       ])
     )
   }

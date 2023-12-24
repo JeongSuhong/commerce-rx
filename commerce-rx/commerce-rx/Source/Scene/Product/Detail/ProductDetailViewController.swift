@@ -12,7 +12,15 @@ import SnapKit
 class ProductDetailViewController: BaseViewController, StoryboardBased, StoryboardView {
   
   enum cellType: Int, CaseIterable {
-    case imageInfo
+    case imageInfo, review, inquire
+    
+    var title: String {
+      switch self {
+      case .imageInfo: return "상품정보"
+      case .review: return "리뷰"
+      case .inquire: return "문의"
+      }
+    }
   }
   
   enum Reusable {
@@ -93,7 +101,9 @@ extension ProductDetailViewController: UITableViewDataSource, UITableViewDelegat
   }
 
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    return ProductDetailSectionView()
+    let view = ProductDetailSectionView()
+    view.bind(cellType.allCases.map { $0.title })
+    return view
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

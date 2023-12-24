@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,27 +16,22 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="370" height="50"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="S62-EC-xXO">
                     <rect key="frame" x="0.0" y="0.0" width="370" height="50"/>
                 </stackView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5XS-pq-X40">
-                    <rect key="frame" x="135" y="49" width="100" height="1"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="100" id="NhR-DZ-ay5"/>
-                        <constraint firstAttribute="height" constant="1" id="oo5-ng-oT6"/>
-                    </constraints>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5XS-pq-X40">
+                    <rect key="frame" x="0.0" y="48" width="100" height="2"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" name="AccentColor"/>
                 </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstAttribute="height" constant="50" id="Gfl-eZ-bal"/>
                 <constraint firstAttribute="trailing" secondItem="S62-EC-xXO" secondAttribute="trailing" id="Yys-Oe-VEG"/>
-                <constraint firstItem="5XS-pq-X40" firstAttribute="centerX" secondItem="S62-EC-xXO" secondAttribute="centerX" id="abb-HR-hY6"/>
-                <constraint firstAttribute="bottom" secondItem="5XS-pq-X40" secondAttribute="bottom" id="e3s-8g-Rrk"/>
                 <constraint firstAttribute="bottom" secondItem="S62-EC-xXO" secondAttribute="bottom" id="jC6-Fa-bhc"/>
                 <constraint firstItem="S62-EC-xXO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jUQ-zs-bUU"/>
                 <constraint firstItem="S62-EC-xXO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ufl-k5-3P4"/>
@@ -45,6 +41,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.36862745098039218" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

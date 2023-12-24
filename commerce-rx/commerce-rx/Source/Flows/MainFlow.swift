@@ -24,7 +24,7 @@ final class MainFlow: Flow {
     tvc.tabBar.shadowImage = UIImage()
     tvc.tabBar.backgroundImage = UIImage()
     tvc.tabBar.tintColor = .init(resource: .accent)
-    tvc.tabBar.unselectedItemTintColor = .init(resource: .co3333336)
+    tvc.tabBar.unselectedItemTintColor = .init(resource: .co333333).withAlphaComponent(0.6)
     tvc.tabBar.isTranslucent = false
     
     self.tabBarController = tvc

@@ -59,7 +59,7 @@ class HomeViewController: ButtonBarPagerTabStripViewController, StoryboardView, 
 
     changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
       oldCell?.label.bonMotStyleName = "nanum_10"
-      oldCell?.label.textColor = .init(resource: .co8E8E925)
+      oldCell?.label.textColor = .init(resource: .co8E8E92).withAlphaComponent(0.5)
       newCell?.label.bonMotStyleName = "nanumB_10"
       newCell?.label.textColor = .black
     }

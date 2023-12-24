@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,10 +55,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dfJ-bd-5ty">
                     <rect key="frame" x="0.0" y="130" width="130" height="129.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwK-Gd-Voc">
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwK-Gd-Voc">
                             <rect key="frame" x="0.0" y="8" width="130" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" name="co-333333.6"/>
+                            <color key="textColor" name="co-333333"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="bonMotStyleName" value="nanum_12"/>
@@ -94,6 +94,10 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCw-Ci-f8m">
                                                     <rect key="frame" x="0.0" y="0.0" width="75" height="20"/>
                                                     <subviews>
+                                                        <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Us9-Ef-AM9">
+                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="20"/>
+                                                            <color key="backgroundColor" name="co-8E8E92"/>
+                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘배송" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5F-fN-LEt">
                                                             <rect key="frame" x="8" y="0.0" width="59" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -104,12 +108,16 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" name="co-8E8E92.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="K5F-fN-LEt" secondAttribute="trailing" constant="8" id="AEk-i0-3hC"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Us9-Ef-AM9" secondAttribute="bottom" id="CrD-BN-uWK"/>
                                                         <constraint firstItem="K5F-fN-LEt" firstAttribute="top" secondItem="aCw-Ci-f8m" secondAttribute="top" id="E0P-qW-AC2"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Us9-Ef-AM9" secondAttribute="trailing" id="Fg6-l0-QeK"/>
+                                                        <constraint firstItem="Us9-Ef-AM9" firstAttribute="top" secondItem="aCw-Ci-f8m" secondAttribute="top" id="G49-xg-pxB"/>
                                                         <constraint firstAttribute="bottom" secondItem="K5F-fN-LEt" secondAttribute="bottom" id="Wm7-rP-Sbw"/>
                                                         <constraint firstItem="K5F-fN-LEt" firstAttribute="leading" secondItem="aCw-Ci-f8m" secondAttribute="leading" constant="8" id="k0o-fo-73d"/>
+                                                        <constraint firstItem="Us9-Ef-AM9" firstAttribute="leading" secondItem="aCw-Ci-f8m" secondAttribute="leading" id="rLW-jS-RRs"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -235,14 +243,17 @@
         <namedColor name="AccentColor">
             <color red="1" green="0.36862745098039218" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="co-8E8E92.5">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.5725490196078431" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="co-232A30-FFFFFF">
             <color red="0.13725490196078433" green="0.16470588235294117" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="co-333333.6">
-            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="co-333333">
+            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="co-8E8E92">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="co-8E8E92.5">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.5725490196078431" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

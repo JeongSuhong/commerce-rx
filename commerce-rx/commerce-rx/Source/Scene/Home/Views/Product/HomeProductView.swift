@@ -86,7 +86,7 @@ class HomeProductView: UIView, NibOwnerLoadable, StoryboardView {
     let error = StringStyle(.color(.init(resource: .coF64444)))
     return StringStyle(
       .font(.nanumGothicBold(size: 18)),
-      .color(.init(resource: .co3333336)),
+      .color(.init(resource: .co333333).withAlphaComponent(0.6)),
       .xmlRules([.style("e", error)])
     )
   }

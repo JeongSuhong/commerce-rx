@@ -9,7 +9,11 @@ class BaseCollectionCell<view: UIView>: UICollectionViewCell {
   override init(frame: CGRect) {
     super.init(frame: frame)
     
-    self.addSubview(cellView)
+    self.backgroundColor = .clear
+    self.contentView.backgroundColor = .clear
+    
+    contentView.addSubview(cellView)
+    insetsLayoutMarginsFromSafeArea = false
     cellView.snp.makeConstraints { $0.edges.equalToSuperview() }
   }
   

@@ -21,6 +21,8 @@
 		C434B2FF2ADD42CC0009BA59 /* UICollectionViewLayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C434B2FE2ADD42CC0009BA59 /* UICollectionViewLayout+Extensions.swift */; };
 		C43A26CD2B0F479800A73681 /* ProductDetailInfosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43A26CA2B0F479800A73681 /* ProductDetailInfosView.swift */; };
 		C43A26CF2B0F479800A73681 /* ProductDetailInfosView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C43A26CC2B0F479800A73681 /* ProductDetailInfosView.xib */; };
+		C460949D2B2FD23100B90431 /* ProductDetailImageInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460949A2B2FD23100B90431 /* ProductDetailImageInfoView.swift */; };
+		C460949F2B2FD23100B90431 /* ProductDetailImageInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C460949C2B2FD23100B90431 /* ProductDetailImageInfoView.xib */; };
 		C460AE262ACD4B27008D22A4 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460AE252ACD4B27008D22A4 /* UIScrollView+Extensions.swift */; };
 		C460AE2D2ACD69ED008D22A4 /* HomeMoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460AE2A2ACD69ED008D22A4 /* HomeMoreListView.swift */; };
 		C460AE2F2ACD69ED008D22A4 /* HomeMoreListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C460AE2C2ACD69ED008D22A4 /* HomeMoreListView.xib */; };
@@ -144,6 +146,8 @@
 		C45E864A2AAF16A100C44B50 /* NanumBarunGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.ttf; sourceTree = "<group>"; };
 		C45E864B2AAF16A100C44B50 /* NanumBarunGothicUltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicUltraLight.ttf; sourceTree = "<group>"; };
 		C45E864C2AAF16A100C44B50 /* NanumBarunGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.ttf; sourceTree = "<group>"; };
+		C460949A2B2FD23100B90431 /* ProductDetailImageInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailImageInfoView.swift; sourceTree = "<group>"; };
+		C460949C2B2FD23100B90431 /* ProductDetailImageInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailImageInfoView.xib; sourceTree = "<group>"; };
 		C460AE252ACD4B27008D22A4 /* UIScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extensions.swift"; sourceTree = "<group>"; };
 		C460AE2A2ACD69ED008D22A4 /* HomeMoreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMoreListView.swift; sourceTree = "<group>"; };
 		C460AE2C2ACD69ED008D22A4 /* HomeMoreListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMoreListView.xib; sourceTree = "<group>"; };
@@ -651,6 +655,8 @@
 			children = (
 				C4E9AE032B2A910500804413 /* ProductDetailSectionView.xib */,
 				C4E9AE012B2A910500804413 /* ProductDetailSectionView.swift */,
+				C460949C2B2FD23100B90431 /* ProductDetailImageInfoView.xib */,
+				C460949A2B2FD23100B90431 /* ProductDetailImageInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -772,6 +778,7 @@
 				C4B353BB2AC2C94000921ADC /* HomeCategoryItem.xib in Resources */,
 				C49D7A692ABD73A5000F4CB8 /* CommonErrorView.xib in Resources */,
 				C4A0C9632AB1BA5D00F46AD1 /* NanumBarunGothicLight.ttf in Resources */,
+				C460949F2B2FD23100B90431 /* ProductDetailImageInfoView.xib in Resources */,
 				C4AD96DC2AE7C35D00215675 /* ProductDetailViewController.storyboard in Resources */,
 				C43A26CF2B0F479800A73681 /* ProductDetailInfosView.xib in Resources */,
 				C4A4E0432AA996430046F60C /* LaunchScreen.storyboard in Resources */,
@@ -813,6 +820,7 @@
 				C49927DD2ABA8B700007C299 /* CommonBannerView.swift in Sources */,
 				C40AC2C32AC17D8D00C8C9F4 /* BaseView.swift in Sources */,
 				C4AD96DE2AE7C35D00215675 /* ProductDetailReactor.swift in Sources */,
+				C460949D2B2FD23100B90431 /* ProductDetailImageInfoView.swift in Sources */,
 				C49D7A472ABAD2F2000F4CB8 /* UIStackView+Extensions.swift in Sources */,
 				C48918812AD635F300D7EB30 /* Int+Extensions.swift in Sources */,
 				C488463A2B16D40800E50166 /* NSLayoutConstraint+Extensions.swift in Sources */,

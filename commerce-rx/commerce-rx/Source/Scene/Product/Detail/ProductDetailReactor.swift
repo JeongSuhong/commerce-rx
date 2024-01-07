@@ -11,18 +11,22 @@ class ProductDetailReactor: Reactor, Stepper {
   enum Action {
     case refresh
     case setModel(ProductModel)
+    case toggleImageInfoOpen
   }
   
   enum Mutation {
     case setStatus(ViewStatus)
     case setInfo(ProductDetailRes)
   case setModel(ProductModel)
+    case setImageInfoOpen(Bool)
   }
   
   struct State {
     var status: ViewStatus = .loading
     @Pulse var model: ProductModel?
     @Pulse var info: ProductDetailRes?
+    
+    var isImageInfoOpen = false
   }
   
   let initialState: State
@@ -63,6 +67,9 @@ class ProductDetailReactor: Reactor, Stepper {
     case .setModel(let model):
       return .just(.setModel(model))
       
+    case .toggleImageInfoOpen:
+      return .just(.setImageInfoOpen(!currentState.isImageInfoOpen))
+        
     }
 
     return .empty()
@@ -77,6 +84,8 @@ class ProductDetailReactor: Reactor, Stepper {
       newState.info = value
     case .setModel(let value):
       newState.model = value
+    case .setImageInfoOpen(let value):
+      newState.isImageInfoOpen = value
     }
     
     return newState

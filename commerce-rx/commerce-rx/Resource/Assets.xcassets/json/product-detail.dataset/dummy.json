@@ -11,23 +11,47 @@
     "images": [
         {
             "id": "10000",
-            "url": "https://picsum.photos/800"
-        },
-        {
-            "id": "10001",
-            "url": "https://picsum.photos/700"
-        },
-        {
-            "id": "10002",
-            "url": "https://picsum.photos/600"
-        },
-        {
-            "id": "10003",
             "url": "https://picsum.photos/500"
         },
         {
-            "id": "10004",
-            "url": "https://picsum.photos/400"
+            "id": "10001",
+            "url": "https://picsum.photos/900"
+        },
+        {
+            "id": "10002",
+            "url": "https://picsum.photos/1000"
+        }
+    ],
+    "detailImages": [
+        {
+            "id": "20000",
+            "url": "https://picsum.photos/1200/500",
+            "width": 1200,
+            "height": 500
+        },
+        {
+            "id": "20001",
+            "url": "https://picsum.photos/700/700",
+            "width": 700,
+            "height": 700
+        },
+        {
+            "id": "20002",
+            "url": "https://picsum.photos/600/1000",
+            "width": 600,
+            "height": 1000
+        },
+        {
+            "id": "20003",
+            "url": "https://picsum.photos/500/800",
+            "width": 500,
+            "height": 800
+        },
+        {
+            "id": "20004",
+            "url": "https://picsum.photos/400/400",
+            "width": 400,
+            "height": 400
         }
     ],
     "benefit": {

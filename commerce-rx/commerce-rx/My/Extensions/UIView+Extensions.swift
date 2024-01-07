@@ -24,6 +24,20 @@ extension UIView {
         get { layer.borderWidth }
         set { layer.borderWidth = newValue }
     }
+  
+  func setGradient(colors: [UIColor], locations: [NSNumber] = [0.0, 1.0], start: CGPoint = .init(x: 0.5, y: 1.0), end: CGPoint = .init(x: 0.5, y: 0.0)) {
+    self.layer.sublayers?.first(where: { $0.name == "gradient" })?.removeFromSuperlayer()
+    
+    let layer = CAGradientLayer()
+    layer.name = "gradient"
+    layer.colors = colors.map { $0.cgColor }
+    layer.startPoint = start
+    layer.endPoint = end
+    layer.locations =  locations
+    layer.position = self.center
+    layer.frame = self.bounds
+    self.layer.insertSublayer(layer, at: 0)
+  }
 }
 
 extension Reactive where Base: UIView {

@@ -116,11 +116,14 @@ struct ProductDetailRes: Codable {
   let detailContent: String
   let reviewRating: Double
   let reviewCount: Int
+  let detailImages: [ProductImageRes]
 }
 
 struct ProductImageRes: Codable {
   let id: String
   let url: String
+  let width: Int?
+  let height: Int?
 }
 
 

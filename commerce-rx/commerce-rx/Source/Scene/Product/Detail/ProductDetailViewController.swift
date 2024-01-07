@@ -6,6 +6,7 @@ import Reusable
 import ReactorKit
 import ReusableKit
 import SnapKit
+import RxCocoa
 
 // MARK: - ViewController
 
@@ -24,8 +25,7 @@ class ProductDetailViewController: BaseViewController, StoryboardBased, Storyboa
   }
   
   enum Reusable {
-
-    
+    static let imageInfoCell = ReusableCell<BaseTableCell<ProductDetailImageInfoView>>()
   }
   
   typealias Reactor = ProductDetailReactor
@@ -41,14 +41,20 @@ class ProductDetailViewController: BaseViewController, StoryboardBased, Storyboa
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    mainView.estimatedRowHeight = 100
     mainView.contentInsetAdjustmentBehavior = .never
-
+    mainView.register(Reusable.imageInfoCell)
     mainView.delegate = self
     mainView.dataSource = self
   }
   
-  func bind(reactor: Reactor) {
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
     
+    
+  }
+  
+  func bind(reactor: Reactor) {
     let infoState = reactor.pulse(\.$info).compactMap { $0 }
     let modelState = reactor.pulse(\.$model).compactMap { $0 }
     infoState
@@ -70,6 +76,24 @@ class ProductDetailViewController: BaseViewController, StoryboardBased, Storyboa
       .bind(with: self) { vc, status in
         vc.loadingView.isHidden = status != .loading
         vc.errorView.isHidden = status != .error
+      }.disposed(by: disposeBag)
+    
+    reactor.state.map { $0.isImageInfoOpen }
+      .skip(1)
+      .distinctUntilChanged()
+      .observe(on: MainScheduler.asyncInstance)
+      .bind(with: self) { vc, isOpen in
+        vc.mainView.reloadRows(at: [IndexPath(row: cellType.imageInfo.rawValue, section: 0)], with: isOpen ? .bottom : .top)
+      }.disposed(by: disposeBag)
+    
+    
+    
+  
+    mainView.rx.willDisplayCell.map { $0.indexPath.row }
+      .distinctUntilChanged()
+      .observe(on: MainScheduler.asyncInstance)
+      .bind(with: self) { vc, row in
+        
       }.disposed(by: disposeBag)
 
     navView.dismissView.rx.tap
@@ -107,14 +131,40 @@ extension ProductDetailViewController: UITableViewDataSource, UITableViewDelegat
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 0
+    return 1
+//    return cellType.allCases.count
   }
 
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return UITableView.automaticDimension
+  }
+  
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let info = self.reactor?.currentState.info
     let model = self.reactor?.currentState.model
     
-    return UITableViewCell()
+    switch cellType(rawValue: indexPath.row) {
+    default:
+      let cell = tableView.dequeue(Reusable.imageInfoCell, for: indexPath)
+      cell.cellView.bind(info?.detailImages.map { $0.url } ?? [])
+      cell.cellView.setOpen(self.reactor?.currentState.isImageInfoOpen ?? false)
+    
+      self.rx.viewDidLayoutSubviews
+        .take(1)
+        .observe(on: MainScheduler.asyncInstance)
+        .bind(with: self) { vc, _ in
+          cell.cellView.openShadowView.setGradient(colors: [.white, .white.withAlphaComponent(0.0)], locations: [0.6, 1.0])
+        }.disposed(by: cell.cellView.disposeBag)
+      
+      if let reactor = self.reactor {
+        cell.cellView.openView.rx.tap
+          .map { _ in Reactor.Action.toggleImageInfoOpen }
+          .bind(to: reactor.action)
+          .disposed(by: cell.cellView.disposeBag)
+      }
+      
+      return cell
+    }
   }
 }
 

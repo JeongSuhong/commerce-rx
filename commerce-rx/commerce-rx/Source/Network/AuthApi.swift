@@ -24,7 +24,7 @@ return .get
   
   var task: Moya.Task {
     switch self {
-    case .refreshToken(let params):
+    case let .refreshToken(params):
       return .requestJSONEncodable(params)
     default:
       return .requestPlain

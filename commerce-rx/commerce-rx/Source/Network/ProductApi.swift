@@ -29,7 +29,7 @@ return .get
   
   var task: Moya.Task {
     switch self {
-    case .list(let params):
+    case let .list(params):
       return .requestParameters(parameters: params.asDic() ?? [:], encoding: URLEncoding.default)
     default:
       return .requestPlain
@@ -38,7 +38,7 @@ return .get
   
   var sampleData: Data {
     switch self {
-    case .list(let req):
+    case let .list(req):
       switch req.type {
       case .related:
         return NSDataAsset(name: "product-related")!.data

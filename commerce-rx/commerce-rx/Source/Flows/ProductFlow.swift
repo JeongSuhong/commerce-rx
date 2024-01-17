@@ -27,7 +27,7 @@ final class ProductFlow: Flow {
   func navigate(to step: Step) -> FlowContributors {
     guard let step = step as? ProductStep else { return .none }
     switch step {
-    case .detail(let id):
+    case let .detail(id):
       let vc = ProductDetailViewController.instantiate()
       let reactor = ProductDetailReactor(id: id)
       vc.reactor = reactor

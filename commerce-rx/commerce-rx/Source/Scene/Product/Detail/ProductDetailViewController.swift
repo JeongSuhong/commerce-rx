@@ -48,11 +48,6 @@ class ProductDetailViewController: BaseViewController, StoryboardBased, Storyboa
     mainView.dataSource = self
   }
   
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-    
-    
-  }
   
   func bind(reactor: Reactor) {
     let infoState = reactor.pulse(\.$info).compactMap { $0 }
@@ -83,7 +78,7 @@ class ProductDetailViewController: BaseViewController, StoryboardBased, Storyboa
       .distinctUntilChanged()
       .observe(on: MainScheduler.asyncInstance)
       .bind(with: self) { vc, isOpen in
-        vc.mainView.reloadRows(at: [IndexPath(row: cellType.imageInfo.rawValue, section: 0)], with: isOpen ? .bottom : .top)
+        vc.mainView.reloadData()
       }.disposed(by: disposeBag)
     
     
@@ -125,6 +120,7 @@ extension ProductDetailViewController: UITableViewDataSource, UITableViewDelegat
   }
 
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    // 스크롤 시 NavBar 가 위에 덮는 형식이라 Header 고정이 최상단에서 이뤄지고있음!
     let view = ProductDetailSectionView()
     view.bind(cellType.allCases.map { $0.title })
     return view
@@ -148,13 +144,6 @@ extension ProductDetailViewController: UITableViewDataSource, UITableViewDelegat
       let cell = tableView.dequeue(Reusable.imageInfoCell, for: indexPath)
       cell.cellView.bind(info?.detailImages.map { $0.url } ?? [])
       cell.cellView.setOpen(self.reactor?.currentState.isImageInfoOpen ?? false)
-    
-      self.rx.viewDidLayoutSubviews
-        .take(1)
-        .observe(on: MainScheduler.asyncInstance)
-        .bind(with: self) { vc, _ in
-          cell.cellView.openShadowView.setGradient(colors: [.white, .white.withAlphaComponent(0.0)], locations: [0.6, 1.0])
-        }.disposed(by: cell.cellView.disposeBag)
       
       if let reactor = self.reactor {
         cell.cellView.openView.rx.tap

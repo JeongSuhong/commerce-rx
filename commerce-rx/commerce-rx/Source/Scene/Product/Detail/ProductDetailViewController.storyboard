@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YLi-Rh-Zs5">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YLi-Rh-Zs5">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="0md-JQ-TcI">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="425"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -36,6 +35,9 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="EMG-2Y-dFB" firstAttribute="height" secondItem="ywl-41-9qA" secondAttribute="width" id="idb-uB-DUh"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -43,7 +45,6 @@
                                         <constraint firstItem="ywl-41-9qA" firstAttribute="top" secondItem="0md-JQ-TcI" secondAttribute="top" id="0oe-R0-b7r"/>
                                         <constraint firstItem="ywl-41-9qA" firstAttribute="leading" secondItem="0md-JQ-TcI" secondAttribute="leading" id="4O9-YD-MAc"/>
                                         <constraint firstAttribute="trailing" secondItem="ywl-41-9qA" secondAttribute="trailing" id="L8I-Jr-Cfh"/>
-                                        <constraint firstItem="EMG-2Y-dFB" firstAttribute="height" secondItem="ywl-41-9qA" secondAttribute="width" id="idb-uB-DUh"/>
                                     </constraints>
                                 </view>
                                 <prototypes>

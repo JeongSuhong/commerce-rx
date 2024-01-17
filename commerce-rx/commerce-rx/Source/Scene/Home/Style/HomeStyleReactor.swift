@@ -40,10 +40,10 @@ case setStatus(ViewStatus)
 
   func mutate(action: Action) -> Observable<Mutation> {
     switch action {
-    case .refresh(let isViewLoading):
+    case let .refresh(isViewLoading):
       return .concat(.just(.setStatus(isViewLoading ? .loading : .loadingScroll)), refresh())
       
-    case .selectBanner(let index):
+    case let .selectBanner(index):
       guard let banner = currentState.banners?.data[safe: index] else { break }
       switch banner.type {
       case .url:
@@ -54,11 +54,11 @@ case setStatus(ViewStatus)
       default: break
       }
       
-    case .selectItem(let index):
+    case let .selectItem(index):
       guard let id = currentState.info[safe: index] else { break }
       steps?.accept(HomeStep.productDetail(id: id))
       
-    case .selectRelateItem(let index):
+    case let .selectRelateItem(index):
       guard let id = currentState.relateProducts[safe: index] else { break }
       steps?.accept(HomeStep.productDetail(id: id))
     }
@@ -69,14 +69,14 @@ case setStatus(ViewStatus)
   func reduce(state: State, mutation: Mutation) -> State {
     var newState = state
     switch mutation {
-    case .setStatus(let value):
+    case let .setStatus(value):
       newState.status = value
-    case .setRefresh(let args):
+    case let .setRefresh(args):
       newState.banners = args.0
       newState.categorys = args.1
       newState.relateProducts = args.2.data.map { $0.id }
       newState.info = args.3.data.map { $0.id }
-    case .setInfo(let value):
+    case let .setInfo(value):
       newState.info = value
     }
     return newState

@@ -21,7 +21,7 @@ enum HomeApi: ApiTargetType {
   
   var task: Moya.Task {
     switch self {
-    case .categorys(let params):
+    case let .categorys(params):
       return .requestParameters(parameters: params.asDic() ?? [:], encoding: URLEncoding.default)
     default: return .requestPlain
     }
@@ -32,7 +32,7 @@ enum HomeApi: ApiTargetType {
     case .banners:
       return NSDataAsset(name: "home-banner")!.data
     
-    case .categorys(let req):
+    case let .categorys(req):
       switch req.type {
       case .home:
         return NSDataAsset(name: "home-categorys-home")!.data

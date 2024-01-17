@@ -49,12 +49,7 @@ class ProductDetailReactor: Reactor, Stepper {
   
   private func bindRealm(_ model: ProductModel) {
     token = model.observe { [weak self] status in
-      switch status {
-      case .change:
-        self?.action.onNext(.setModel(model))
-        break
-      default: break
-      }
+      if case .change = status { self?.action.onNext(.setModel(model)) }
     }
   }
   
@@ -64,7 +59,7 @@ class ProductDetailReactor: Reactor, Stepper {
     case .refresh:
       return .concat(.just(.setStatus(.loading)), refresh())
       
-    case .setModel(let model):
+    case let .setModel(model):
       return .just(.setModel(model))
       
     case .toggleImageInfoOpen:
@@ -78,13 +73,13 @@ class ProductDetailReactor: Reactor, Stepper {
   func reduce(state: State, mutation: Mutation) -> State {
     var newState = state
     switch mutation {
-    case .setStatus(let value):
+    case let .setStatus(value):
       newState.status = value
-    case .setInfo(let value):
+    case let .setInfo(value):
       newState.info = value
-    case .setModel(let value):
+    case let .setModel(value):
       newState.model = value
-    case .setImageInfoOpen(let value):
+    case let .setImageInfoOpen(value):
       newState.isImageInfoOpen = value
     }
     

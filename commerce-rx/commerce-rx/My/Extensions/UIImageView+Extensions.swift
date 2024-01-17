@@ -7,7 +7,7 @@ import NukeExtensions
 import SnapKit
 
 extension UIImageView {
-  func loadImage(_ url: String, fitHeight: Bool = false) {
+  func loadImage(_ url: String, fitHeight: Bool = false, completion: (() -> Void)? = nil) {
     NukeExtensions.loadImage(with: URL(string: url), into: self) { result in
       
       if let imageSize = try? result.get().image.size {

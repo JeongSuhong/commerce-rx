@@ -19,11 +19,11 @@ class BasePagerViewController: BaseViewController, UIScrollViewDelegate {
   
   // https://stackoverflow.com/a/34482740
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
-      if lastContentOffset > scrollView.contentOffset.y && lastContentOffset < scrollView.contentSize.height - scrollView.frame.height {
-        isDownScroll.onNext(false)
-      } else if lastContentOffset < scrollView.contentOffset.y && scrollView.contentOffset.y > 0 {
-        isDownScroll.onNext(true)
-      }
+    if scrollView.contentOffset.y ..< scrollView.contentSize.height - scrollView.frame.height ~= lastContentOffset {
+      isDownScroll.onNext(false)
+    } else if lastContentOffset < scrollView.contentOffset.y && scrollView.contentOffset.y > 0 {
+      isDownScroll.onNext(true)
+    }
     
       lastContentOffset = scrollView.contentOffset.y
   }

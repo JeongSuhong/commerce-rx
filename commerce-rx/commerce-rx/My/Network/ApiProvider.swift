@@ -66,7 +66,7 @@ class ApiProvider {
       
       MoyaProvider<AuthApi>(plugins: [MoyaLoggerPlugin()]).request(.refreshToken(RefreshTokenReq(refreshToken: refreshToken))) { result in
         switch result {
-        case .success(let result):
+        case let .success(result):
           if let res = try? JSONDecoder().decode(RefreshTokenRes.self, from: result.data) {
             UserDefaults.standard.setValue(res.accessToken, forKey: UserDefaultKeys.accessToken.rawValue)
             UserDefaults.standard.setValue(res.refreshToken, forKey: UserDefaultKeys.refreshToken.rawValue)
@@ -75,7 +75,7 @@ class ApiProvider {
           //TODO: 로그아웃
             completion(.doNotRetryWithError(error))
           }
-        case .failure(let error):
+        case let .failure(error):
           //TODO: 로그아웃
           completion(.doNotRetryWithError(error))
         }
@@ -88,9 +88,9 @@ class ApiProvider {
     try await withCheckedThrowingContinuation { con in
       ApiProvider.shared.request(MultiTarget(target)) { result in
         switch result {
-        case .success(let res):
+        case let .success(res):
           con.resume(returning: res.data)
-        case .failure(let error):
+        case let .failure(error):
           con.resume(throwing: error)
         }
         
@@ -103,7 +103,7 @@ class ApiProvider {
     try await withCheckedThrowingContinuation { con in
       ApiProvider.shared.request(MultiTarget(target)) { result in
         switch result {
-        case .success(let res):
+        case let .success(res):
           do {
             _ = try res.filterSuccessfulStatusCodes()
             
@@ -116,7 +116,7 @@ class ApiProvider {
             con.resume(throwing: error)
           }
           
-        case .failure(let error):
+        case let .failure(error):
           con.resume(throwing: error)
         }
       }
@@ -128,14 +128,10 @@ class ApiProvider {
 extension ObservableType {
   func errorHandling() -> Observable<Element> {
     return `catch` { error in
-      switch error as? MoyaError {
-      case .underlying:
+      if case .underlying = (error as? MoyaError) {
         _Concurrency.Task {
-          // 네트워크 에러 팝업 띄우기
+          
         }
-          break
-        
-      default: break
       }
       
       return self.asObservable()
@@ -170,7 +166,7 @@ struct MoyaLoggerPlugin: PluginType {
   func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
     #if DEBUG
     switch result {
-    case .success(let res):
+    case let .success(res):
       print("---------------- [ HTTP Response ] ----------------")
       print("TARGET: \(target)")
       print("CODE: \(res.statusCode)")
@@ -180,7 +176,7 @@ struct MoyaLoggerPlugin: PluginType {
       }
       print("\n\n")
       
-    case .failure(let error):
+    case let .failure(error):
       print("---------------- [ Network Error ] ----------------")
       print("CODE: \(error.errorCode)")
       print("MESSAGE: \(error.failureReason ?? error.errorDescription ?? "Unkown Error")")

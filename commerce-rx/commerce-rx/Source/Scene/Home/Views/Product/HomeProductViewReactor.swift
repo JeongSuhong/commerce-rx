@@ -38,18 +38,13 @@ case setInfo(ProductModel)
   
   private func bindRealm(_ model: ProductModel) {
     token = model.observe { [weak self] status in
-      switch status {
-      case .change:
-        self?.action.onNext(.setInfo(model))
-        break
-      default: break
-      }
+      if case .change = status { self?.action.onNext(.setInfo(model)) }
     }
   }
 
   func mutate(action: Action) -> Observable<Mutation> {
     switch action {
-    case .setInfo(let info):
+    case let .setInfo(info):
       return .just(.setInfo(info))
       
     case .switchLike:
@@ -62,7 +57,7 @@ case setInfo(ProductModel)
   func reduce(state: State, mutation: Mutation) -> State {
     var newState = state
     switch mutation {
-    case .setInfo(let value):
+    case let .setInfo(value):
       newState.info = value
     }
     return newState

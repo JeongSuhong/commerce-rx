@@ -46,7 +46,7 @@ final class HomeFlow: Flow {
       self.navigationController.setViewControllers([vc], animated: false)
       return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: reactor))
       
-    case .productDetail(let id):
+    case let .productDetail(id):
       let flow = ProductFlow(self.navigationController)
       Flows.use(flow, when: .created, block: { _ in })
       return .one(flowContributor: .contribute(withNextPresentable: flow, withNextStepper: OneStepper(withSingleStep: ProductStep.detail(id: id))))

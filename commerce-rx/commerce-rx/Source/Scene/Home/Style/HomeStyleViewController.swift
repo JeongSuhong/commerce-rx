@@ -55,7 +55,7 @@ class HomeStyleViewController: BasePagerViewController, StoryboardBased, Storybo
         vc.loadingView.isHidden = status != .loading
         vc.errorView.isHidden = status != .error
         
-        if status == .none || status == .finish {
+        if [.none, .finish].contains(status) {
           vc.mainView.refreshControl?.endRefreshing()
           vc.mainView.reloadData()
         }
@@ -81,14 +81,13 @@ extension HomeStyleViewController: UICollectionViewDelegate, UICollectionViewDat
   }
   
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-    switch kind {
-    case UICollectionView.elementKindSectionHeader:
+    if case UICollectionView.elementKindSectionHeader = kind {
       let view = collectionView.dequeue(Reusable.header, kind: kind, for: indexPath)
       bindHeader(view.cellView)
       return view
-    default:
-      return UICollectionReusableView()
     }
+    
+    return UICollectionReusableView()
   }
   
   private func bindHeader(_ view: HomeStyleHeaderView) {

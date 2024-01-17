@@ -28,7 +28,7 @@ case setInfo([HomeCategorysRes.categoryRes])
 
   func mutate(action: Action) -> Observable<Mutation> {
     switch action {
-    case .setInfo(let info):
+    case let .setInfo(info):
       return .just(.setInfo(info))
     }
     
@@ -38,7 +38,7 @@ case setInfo([HomeCategorysRes.categoryRes])
   func reduce(state: State, mutation: Mutation) -> State {
     var newState = state
     switch mutation {
-    case .setInfo(let value):
+    case let .setInfo(value):
       newState.info = value
     }
     return newState

@@ -38,6 +38,14 @@ extension UIView {
     layer.frame = self.bounds
     self.layer.insertSublayer(layer, at: 0)
   }
+  
+  func addShadow(opacity: Float, size: Double, radius: Double, color: UIColor ) {
+      layer.shadowColor = color.cgColor
+      layer.shadowOpacity = opacity
+      layer.shadowOffset = CGSize(width: size, height: size)
+      layer.shadowRadius = radius
+      layer.masksToBounds = true
+  }
 }
 
 extension Reactive where Base: UIView {
